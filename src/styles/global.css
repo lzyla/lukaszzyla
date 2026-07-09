@@ -1,0 +1,105 @@
+:root {
+  --max-width: 40rem;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --bg: #fdfdfc;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #2b5cff;
+  --border: #e6e6e3;
+  --code-bg: #f4f4f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111110;
+    --fg: #e8e8e6;
+    --muted: #9a9a97;
+    --accent: #7aa2ff;
+    --border: #2a2a28;
+    --code-bg: #1c1c1a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.25rem 6rem;
+}
+
+/* --- nawigacja --- */
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4rem;
+  font-size: 0.95rem;
+}
+.site-nav a { margin-left: 1.25rem; }
+.site-nav .brand {
+  font-weight: 600;
+  margin-left: 0;
+}
+
+/* --- typografia --- */
+h1, h2, h3 { line-height: 1.25; font-weight: 650; }
+h1 { font-size: 1.9rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; }
+h3 { font-size: 1.1rem; margin: 2rem 0 0.5rem; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+p, ul, ol { margin: 0 0 1.2rem; }
+
+article p, article li { font-family: var(--font-serif); font-size: 1.08rem; }
+
+.muted { color: var(--muted); }
+.post-meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+
+/* --- lista wpisów na stronie głównej --- */
+.post-list { list-style: none; padding: 0; }
+.post-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.post-list time { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* --- kod --- */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+pre code { background: none; padding: 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }

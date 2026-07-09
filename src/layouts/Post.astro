@@ -1,0 +1,23 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+}
+const { title, description, date } = Astro.props;
+const formatted = date.toLocaleDateString('pl-PL', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+---
+
+<Base title={title} description={description}>
+  <article>
+    <h1>{title}</h1>
+    <p class="post-meta"><time datetime={date.toISOString()}>{formatted}</time></p>
+    <slot />
+  </article>
+  <hr />
+  <p class="muted"><a href="/">← wszystkie wpisy</a></p>
+</Base>

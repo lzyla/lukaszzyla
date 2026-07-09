@@ -1,0 +1,163 @@
+---
+// Interaktywny diagram architektury OtwartePaństwo.
+// Klik/enter na węźle pokazuje opis. Dane "płyną" wzdłuż potoku (SMIL).
+// Zwykły komponent Astro + <script> — bez frameworka.
+const uid = 'arch-' + Math.random().toString(36).slice(2, 9);
+---
+
+<div class="op-arch" id={uid}>
+  <svg viewBox="0 0 720 430" preserveAspectRatio="xMidYMid meet" role="img"
+       aria-label="Diagram architektury serwisu OtwartePaństwo">
+    <defs>
+      <marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="8" refY="5"
+              markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" class="op-arrowhead" />
+      </marker>
+      <path id={`${uid}-flow`} d="M163,80 L623,80 L623,268 L445,268" fill="none" />
+    </defs>
+
+    <!-- krawędzie -->
+    <g class="op-edges" stroke-width="2" fill="none" marker-end={`url(#${uid}-arrow)`}>
+      <path d="M163,80 L189,80" />
+      <path d="M341,80 L367,80" />
+      <path d="M519,80 L545,80" />
+      <path d="M623,116 L623,228" />
+      <path d="M549,268 L523,268" />
+      <path d="M489,360 L558,306" />
+      <path d="M660,306 L634,360" />
+    </g>
+
+    <!-- płynące "dane" -->
+    <circle r="4" class="op-dot"><animateMotion dur="5s" begin="0s" repeatCount="indefinite"><mpath href={`#${uid}-flow`} /></animateMotion></circle>
+    <circle r="4" class="op-dot"><animateMotion dur="5s" begin="1.6s" repeatCount="indefinite"><mpath href={`#${uid}-flow`} /></animateMotion></circle>
+    <circle r="4" class="op-dot"><animateMotion dur="5s" begin="3.2s" repeatCount="indefinite"><mpath href={`#${uid}-flow`} /></animateMotion></circle>
+
+    <!-- węzły -->
+    <g class="op-node" data-id="zrodla" tabindex="0" role="button" aria-label="Źródła danych">
+      <rect x="15" y="44" width="148" height="72" rx="10" />
+      <text x="89" y="76" class="op-title">Źródła</text>
+      <text x="89" y="96" class="op-sub">Monitor Polski, dzienniki</text>
+    </g>
+    <g class="op-node" data-id="crawlery" tabindex="0" role="button" aria-label="Crawlery">
+      <rect x="193" y="44" width="148" height="72" rx="10" />
+      <text x="267" y="76" class="op-title">Crawlery</text>
+      <text x="267" y="96" class="op-sub">skrypt na źródło</text>
+    </g>
+    <g class="op-node" data-id="normalizacja" tabindex="0" role="button" aria-label="Normalizacja">
+      <rect x="371" y="44" width="148" height="72" rx="10" />
+      <text x="445" y="76" class="op-title">Normalizacja</text>
+      <text x="445" y="96" class="op-sub">→ czysty tekst</text>
+    </g>
+    <g class="op-node" data-id="postgres" tabindex="0" role="button" aria-label="PostgreSQL">
+      <rect x="549" y="44" width="148" height="72" rx="10" />
+      <text x="623" y="76" class="op-title">PostgreSQL</text>
+      <text x="623" y="96" class="op-sub">baza + wyszukiwanie</text>
+    </g>
+    <g class="op-node" data-id="api" tabindex="0" role="button" aria-label="Backend API">
+      <rect x="549" y="232" width="148" height="72" rx="10" />
+      <text x="623" y="264" class="op-title">Backend API</text>
+      <text x="623" y="284" class="op-sub">Node.js</text>
+    </g>
+    <g class="op-node" data-id="react" tabindex="0" role="button" aria-label="Frontend React">
+      <rect x="371" y="232" width="148" height="72" rx="10" />
+      <text x="445" y="264" class="op-title">Frontend</text>
+      <text x="445" y="284" class="op-sub">React</text>
+    </g>
+    <g class="op-node op-ext" data-id="auth0" tabindex="0" role="button" aria-label="Auth0">
+      <rect x="430" y="360" width="118" height="56" rx="10" />
+      <text x="489" y="386" class="op-title">Auth0</text>
+      <text x="489" y="404" class="op-sub">logowanie</text>
+    </g>
+    <g class="op-node op-ext" data-id="mailgun" tabindex="0" role="button" aria-label="Mailgun">
+      <rect x="568" y="360" width="129" height="56" rx="10" />
+      <text x="632" y="386" class="op-title">Mailgun</text>
+      <text x="632" y="404" class="op-sub">powiadomienia</text>
+    </g>
+  </svg>
+
+  <p class="op-info" data-role="info">
+    Kliknij dowolny element, żeby zobaczyć, za co odpowiadał. Kropki pokazują drogę
+    danych: od źródeł, przez crawlery i normalizację, do bazy, a stamtąd do interfejsu.
+  </p>
+  <p class="op-caption">Całość uruchamiana produkcyjnie w Docker / docker-compose.</p>
+</div>
+
+<style>
+  .op-arch {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem 0.9rem;
+    margin: 2rem 0;
+    font-family: var(--font-sans);
+  }
+  .op-arch svg { width: 100%; height: auto; display: block; }
+
+  .op-edges path { stroke: var(--muted); opacity: 0.6; }
+  .op-arrowhead { fill: var(--muted); opacity: 0.9; }
+  .op-dot { fill: var(--accent); }
+
+  .op-node rect {
+    fill: var(--code-bg);
+    stroke: var(--border);
+    stroke-width: 1.5;
+    transition: stroke 0.15s, stroke-width 0.15s;
+  }
+  .op-node { cursor: pointer; outline: none; }
+  .op-node:hover rect, .op-node:focus rect { stroke: var(--accent); stroke-width: 2.5; }
+  .op-node.is-active rect { stroke: var(--accent); stroke-width: 3; }
+  .op-ext rect { stroke-dasharray: 5 4; }
+
+  .op-title { fill: var(--fg); font-size: 15px; font-weight: 600; text-anchor: middle; }
+  .op-sub { fill: var(--muted); font-size: 11px; text-anchor: middle; }
+
+  .op-info {
+    margin: 0.9rem 0 0.2rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    min-height: 3.2em;
+  }
+  .op-caption { margin: 0.2rem 0 0; font-size: 0.8rem; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .op-dot { display: none; }
+  }
+</style>
+
+<script>
+  function initOpArch() {
+    const DESC: Record<string, string> = {
+      zrodla: 'Źródła — Monitor Polski oraz dzienniki urzędowe ministerstw i urzędów centralnych. Dokumenty w niespójnych formatach: PDF, DOC, a bywa, że JPG. To ta warstwa generuje najwięcej problemów.',
+      crawlery: 'Crawlery — osobny skrypt na każde źródło (w repo np. abw.js, cba.js), bo każda strona publikuje inaczej. W trybie deweloperskim można uruchomić wybrane przez zmienną DEV_CRAWLERS.',
+      normalizacja: 'Normalizacja — sprowadzenie różnych formatów do jednolitego, przeszukiwalnego tekstu. Warunek działania wyszukiwarki, powiadomień i porównań.',
+      postgres: 'PostgreSQL — jedno źródło prawdy: znormalizowane dokumenty, konta użytkowników i zapisane frazy. Opiera się na nim też wyszukiwarka pełnotekstowa (brak osobnego silnika typu Elasticsearch).',
+      api: 'Backend API (Node.js) — logika serwisu: wyszukiwanie, tagi, powiadomienia. Wystawia dane do frontendu i spina usługi zewnętrzne.',
+      react: 'Frontend (React) — interfejs, wyszukiwarka i panel użytkownika z ulubionymi aktami oraz alertami. Responsywny, projektowany pod WCAG 2.0.',
+      auth0: 'Auth0 — uwierzytelnianie, w tym logowanie przez media społecznościowe. Świadomie oddane na zewnątrz, żeby nie budować własnej obsługi haseł.',
+      mailgun: 'Mailgun — wysyłka powiadomień e-mail o nowych aktach pasujących do zapisanych słów kluczowych. Kluczowa funkcja dla dziennikarzy i prawników.',
+    };
+
+    document.querySelectorAll<HTMLElement>('.op-arch').forEach((root) => {
+      if (root.dataset.wired) return;
+      root.dataset.wired = 'true';
+
+      const info = root.querySelector<HTMLElement>('[data-role="info"]')!;
+      const nodes = root.querySelectorAll<SVGGElement>('.op-node');
+
+      const select = (el: SVGGElement) => {
+        const id = el.getAttribute('data-id')!;
+        nodes.forEach((n) => n.classList.toggle('is-active', n === el));
+        info.textContent = DESC[id] ?? '';
+      };
+
+      nodes.forEach((n) => {
+        n.addEventListener('click', () => select(n));
+        n.addEventListener('keydown', (e: KeyboardEvent) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(n); }
+        });
+      });
+    });
+  }
+
+  initOpArch();
+  document.addEventListener('astro:page-load', initOpArch);
+</script>
