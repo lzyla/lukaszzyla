@@ -6,6 +6,9 @@ import GroupLabel from '../components/GroupLabel.astro';
 <Site title="Workshops — Łukasz Żyła" current="workshops">
   <section>
     <h1 class="sr-only">Workshops</h1>
+    <figure class="ws-photo">
+      <img src="/assets/lukasz_zyla.jpg" alt="Łukasz Żyła speaking at a workshop" loading="lazy" width="280" height="280" />
+    </figure>
     <div class="groups">
       <div>
         <GroupLabel>Academic teaching</GroupLabel>
@@ -59,3 +62,21 @@ import GroupLabel from '../components/GroupLabel.astro';
     </div>
   </section>
 </Site>
+
+<style>
+  .ws-photo {
+    margin: 0 0 40px;
+  }
+  .ws-photo img {
+    display: block;
+    width: 280px;
+    max-width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: grayscale(1) contrast(1.05) brightness(0.98);
+  }
+  @media (max-width: 768px) {
+    .ws-photo img { width: 240px; height: 240px; }
+  }
+</style>
