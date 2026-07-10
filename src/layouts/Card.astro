@@ -45,7 +45,7 @@ const {
     --faint: #a9a298;      /* etykiety podgrup */
     --label: #423d37;      /* tytuły sekcji (ciemniejsze) */
     --rule: rgba(27, 24, 21, 0.14);
-    --hl: rgba(240, 205, 118, 0.55); /* delikatny „zakreślacz" na hover */
+    --line: #d86a2c; /* pomarańczowa linia podkreślenia na hover */
 
     --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
@@ -85,15 +85,17 @@ const {
     text-decoration-thickness: 1px;
   }
 
-  /* Linki w treści: zwykłe cienkie podkreślenie */
-  .card :is(.lede, .items, .item, .entries, .prose, .contact) a {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
-    transition: opacity 0.18s ease;
+  /* Linki w treści: na hover wjeżdża od lewej cienka pomarańczowa linia */
+  .card :is(.lede, .items, .item, .entries, .prose, .contact, .anno-list, .anno-body) a {
+    text-decoration: none;
+    background-image: linear-gradient(var(--line), var(--line));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
   }
-  .card :is(.lede, .items, .item, .entries, .prose, .contact) a:hover {
-    opacity: 0.6;
+  .card :is(.lede, .items, .item, .entries, .prose, .contact, .anno-list, .anno-body) a:hover {
+    background-size: 100% 2px;
   }
 
   /* --- Kontener karty --- */

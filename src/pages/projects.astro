@@ -186,7 +186,7 @@ import Site from '../layouts/Site.astro';
     bottom: -6px;
     width: calc(100% - 26px);
     height: 2px;
-    background: #d86a2c;
+    background: var(--line);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
@@ -238,13 +238,14 @@ import Site from '../layouts/Site.astro';
     padding: 2px 9px;
     white-space: nowrap;
   }
-  /* Linki w treści projektów: zwykłe cienkie podkreślenie */
+  /* Linki w treści projektów: na hover pomarańczowa linia od lewej */
   .project p a {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
-    transition: opacity 0.18s ease;
+    text-decoration: none;
+    background-image: linear-gradient(var(--line), var(--line));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
   }
-  .project p a:hover { opacity: 0.6; }
-  .project-title a:hover { opacity: 0.6; }
+  .project p a:hover { background-size: 100% 2px; }
 </style>
