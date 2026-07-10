@@ -173,7 +173,7 @@ import Site from '../layouts/Site.astro';
     line-height: 1.25;
     color: var(--ink);
     margin: 0 0 12px;
-    padding-left: 28px;
+    padding-left: 26px;
     display: flex;
     align-items: baseline;
     gap: 12px;
@@ -182,16 +182,16 @@ import Site from '../layouts/Site.astro';
   .project-title::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0.5em;
-    width: 7px;
-    height: 7px;
+    left: 2px;
+    top: 0.58em;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--faint);
     transition: transform 0.25s ease, background 0.25s ease;
   }
   .project:hover .project-title::before {
-    transform: scale(1.55);
+    transform: scale(1.2);
     background: var(--label);
   }
   .project-title a { color: var(--ink); text-decoration: none; }
