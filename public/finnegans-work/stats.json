@@ -1,0 +1,599 @@
+{
+  "source": "data/finnegans-wake.txt",
+  "basic": {
+    "tokens": 219191,
+    "types": 57718,
+    "sentences": 15175,
+    "paragraphs": 2252,
+    "characters": 1296309,
+    "avg_word_len": 4.71
+  },
+  "lexical_diversity": {
+    "type_token_ratio": 0.2633,
+    "hapax_count": 45870,
+    "hapax_pct_of_types": 79.47,
+    "hapax_pct_of_tokens": 20.93
+  },
+  "top_frequencies": [
+    [
+      "the",
+      12018
+    ],
+    [
+      "and",
+      8479
+    ],
+    [
+      "of",
+      7106
+    ],
+    [
+      "a",
+      4576
+    ],
+    [
+      "to",
+      4473
+    ],
+    [
+      "in",
+      3566
+    ],
+    [
+      "his",
+      2952
+    ],
+    [
+      "for",
+      2424
+    ],
+    [
+      "with",
+      2051
+    ],
+    [
+      "he",
+      1834
+    ],
+    [
+      "that",
+      1814
+    ],
+    [
+      "you",
+      1736
+    ],
+    [
+      "as",
+      1696
+    ],
+    [
+      "on",
+      1607
+    ],
+    [
+      "i",
+      1594
+    ],
+    [
+      "is",
+      1515
+    ],
+    [
+      "all",
+      1413
+    ],
+    [
+      "was",
+      1386
+    ],
+    [
+      "it",
+      1374
+    ],
+    [
+      "her",
+      1214
+    ],
+    [
+      "by",
+      1196
+    ],
+    [
+      "my",
+      1184
+    ],
+    [
+      "from",
+      1090
+    ],
+    [
+      "be",
+      1068
+    ],
+    [
+      "or",
+      990
+    ],
+    [
+      "your",
+      922
+    ],
+    [
+      "at",
+      872
+    ],
+    [
+      "but",
+      858
+    ],
+    [
+      "me",
+      823
+    ],
+    [
+      "their",
+      822
+    ]
+  ],
+  "longest_words": [
+    [
+      "bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup",
+      100
+    ],
+    [
+      "lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk",
+      100
+    ],
+    [
+      "husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract",
+      100
+    ],
+    [
+      "klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot",
+      100
+    ],
+    [
+      "bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur",
+      97
+    ],
+    [
+      "pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd",
+      92
+    ],
+    [
+      "thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind",
+      89
+    ],
+    [
+      "ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin",
+      75
+    ],
+    [
+      "bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata",
+      73
+    ],
+    [
+      "perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth",
+      57
+    ],
+    [
+      "lewdningbluebolteredallucktruckalltraumconductor",
+      48
+    ],
+    [
+      "rumathunaradidillifaititillibumullunukkunun",
+      43
+    ],
+    [
+      "neverheedthemhorseluggarsandlisteltomine",
+      40
+    ],
+    [
+      "cellelleneteutoslavzendlatinsoundscript",
+      39
+    ],
+    [
+      "ricqueracqbrimbillyjicqueyjocqjolicass",
+      38
+    ],
+    [
+      "dullakeykongsbyogblagroggerswagginline",
+      38
+    ],
+    [
+      "youknowwhati'vecomeaboutisawyouract",
+      35
+    ],
+    [
+      "ishallassoboundbewilsothoutoosezit",
+      34
+    ],
+    [
+      "polthergeistkotzdondherhoploits",
+      31
+    ],
+    [
+      "semperexcommunicambiambisumers",
+      30
+    ],
+    [
+      "hierarchitectitiptitoploftical",
+      30
+    ],
+    [
+      "gnomeosulphidosalamermauderman",
+      30
+    ],
+    [
+      "quoiquoiquoiquoiquoiquoiquoiq",
+      29
+    ],
+    [
+      "brideandaudeonsbehindwardborg",
+      29
+    ],
+    [
+      "audiblevisiblegnosibleedible",
+      28
+    ]
+  ],
+  "thunderwords": [
+    [
+      "klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot",
+      100
+    ],
+    [
+      "Lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk",
+      100
+    ],
+    [
+      "Bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup",
+      100
+    ],
+    [
+      "husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract",
+      100
+    ],
+    [
+      "bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur",
+      97
+    ],
+    [
+      "Pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd",
+      92
+    ],
+    [
+      "Thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind",
+      89
+    ],
+    [
+      "Ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin",
+      75
+    ],
+    [
+      "Bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata",
+      73
+    ],
+    [
+      "Perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth",
+      57
+    ],
+    [
+      "lewdningbluebolteredallucktruckalltraumconductor",
+      48
+    ],
+    [
+      "rumathunaradidillifaititillibumullunukkunun",
+      43
+    ],
+    [
+      "neverheedthemhorseluggarsandlisteltomine",
+      40
+    ],
+    [
+      "cellelleneteutoslavzendlatinsoundscript",
+      39
+    ],
+    [
+      "Ricqueracqbrimbillyjicqueyjocqjolicass",
+      38
+    ],
+    [
+      "dullakeykongsbyogblagroggerswagginline",
+      38
+    ],
+    [
+      "Ishallassoboundbewilsothoutoosezit",
+      34
+    ],
+    [
+      "Polthergeistkotzdondherhoploits",
+      31
+    ],
+    [
+      "hierarchitectitiptitoploftical",
+      30
+    ],
+    [
+      "Semperexcommunicambiambisumers",
+      30
+    ],
+    [
+      "gnomeosulphidosalamermauderman",
+      30
+    ]
+  ],
+  "coinages": {
+    "available": true,
+    "coined_types": 30498,
+    "coined_tokens": 32755,
+    "coined_types_pct": 52.84,
+    "coined_tokens_pct": 14.94,
+    "top_coinages": [
+      [
+        "shaun",
+        46
+      ],
+      [
+        "willingdone",
+        24
+      ],
+      [
+        "taff",
+        20
+      ],
+      [
+        "mookse",
+        18
+      ],
+      [
+        "browne",
+        15
+      ],
+      [
+        "hosty",
+        14
+      ],
+      [
+        "livia",
+        13
+      ],
+      [
+        "marcus",
+        13
+      ],
+      [
+        "kersse",
+        13
+      ],
+      [
+        "sazd",
+        13
+      ],
+      [
+        "juva",
+        13
+      ],
+      [
+        "earwicker",
+        12
+      ],
+      [
+        "yu",
+        11
+      ],
+      [
+        "anny",
+        10
+      ],
+      [
+        "lipoleums",
+        10
+      ],
+      [
+        "yur",
+        10
+      ],
+      [
+        "nolan",
+        9
+      ],
+      [
+        "nin",
+        9
+      ],
+      [
+        "honuphrius",
+        9
+      ],
+      [
+        "prankquean",
+        8
+      ],
+      [
+        "rere",
+        8
+      ],
+      [
+        "meself",
+        8
+      ],
+      [
+        "glugg",
+        8
+      ],
+      [
+        "blong",
+        8
+      ],
+      [
+        "gracehoper",
+        8
+      ],
+      [
+        "zinzin",
+        8
+      ],
+      [
+        "hoother",
+        7
+      ],
+      [
+        "twould",
+        7
+      ],
+      [
+        "thirtytwo",
+        7
+      ],
+      [
+        "poghue",
+        7
+      ],
+      [
+        "au",
+        7
+      ],
+      [
+        "thom",
+        7
+      ],
+      [
+        "twentynine",
+        7
+      ],
+      [
+        "burrus",
+        7
+      ],
+      [
+        "tarpey",
+        7
+      ],
+      [
+        "dearo",
+        7
+      ],
+      [
+        "brinabride",
+        7
+      ],
+      [
+        "ondt",
+        7
+      ],
+      [
+        "begor",
+        7
+      ],
+      [
+        "whoishe",
+        7
+      ]
+    ]
+  },
+  "motifs": {
+    "riverrun": 1,
+    "HCE (Here Comes Everybody)": 6,
+    "ALP (Anna Livia Plurabelle)": 21,
+    "Finnegan / Finn": 71,
+    "Humpty / fall": 20,
+    "Shem": 20,
+    "Shaun": 47,
+    "wake / awake": 51,
+    "dream / sleep": 79,
+    "thunder": 30
+  },
+  "per_book": [
+    {
+      "book": "Book I",
+      "tokens": 77466,
+      "types": 24189,
+      "ttr": 0.3123,
+      "hapax": 19540,
+      "hapax_pct": 80.78
+    },
+    {
+      "book": "Book II",
+      "tokens": 62064,
+      "types": 21889,
+      "ttr": 0.3527,
+      "hapax": 18272,
+      "hapax_pct": 83.48
+    },
+    {
+      "book": "Book III",
+      "tokens": 66896,
+      "types": 21204,
+      "ttr": 0.317,
+      "hapax": 17171,
+      "hapax_pct": 80.98
+    },
+    {
+      "book": "Book IV",
+      "tokens": 12756,
+      "types": 5339,
+      "ttr": 0.4185,
+      "hapax": 4542,
+      "hapax_pct": 85.07
+    }
+  ],
+  "zipf": [
+    {
+      "rank": 1,
+      "word": "the",
+      "freq": 12018
+    },
+    {
+      "rank": 2,
+      "word": "and",
+      "freq": 8479
+    },
+    {
+      "rank": 3,
+      "word": "of",
+      "freq": 7106
+    },
+    {
+      "rank": 5,
+      "word": "to",
+      "freq": 4473
+    },
+    {
+      "rank": 10,
+      "word": "he",
+      "freq": 1834
+    },
+    {
+      "rank": 20,
+      "word": "her",
+      "freq": 1214
+    },
+    {
+      "rank": 50,
+      "word": "now",
+      "freq": 460
+    },
+    {
+      "rank": 100,
+      "word": "am",
+      "freq": 179
+    },
+    {
+      "rank": 200,
+      "word": "call",
+      "freq": 73
+    },
+    {
+      "rank": 500,
+      "word": "sight",
+      "freq": 27
+    },
+    {
+      "rank": 1000,
+      "word": "jinnies",
+      "freq": 14
+    }
+  ]
+}
