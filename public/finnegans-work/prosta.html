@@ -60,7 +60,7 @@ Części mowy zgadywane z sufiksu: inne 6904 (50%), rzeczownik 4335 (31%), czaso
 <h2>5. Przekrój przez książkę (suwak)</h2>
 <p>Książka podzielona na 100 równych okien (po ok. 2200 słów). Przesuwaj
 suwak, by zobaczyć wartości parametrów w danym miejscu tekstu. Pionowe
-kreski na wykresach to granice Ksiąg I–IV, czerwona linia to pozycja suwaka.</p>
+kreski na wykresach to granice Ksiąg I–IV, pogrubiona szara linia to pozycja suwaka.</p>
 
 <p><input type="range" id="pos" min="0" max="99" value="0" style="width:100%"></p>
 <p id="readout"></p>
@@ -79,8 +79,8 @@ const METRICS = [
   ["vowel_pct",   "udział samogłosek (%)"],
   ["allit",       "ciągi aliteracyjne w oknie (szt.)"]
 ];
-const LANG_COLORS = {la:"#6b5d8f",ga:"#2e7d4f",fr:"#3b6bb5",
-                     de:"#7a7a2f",it:"#2f8f5b",nl:"#b5551f"};
+const LANG_COLORS = {la:"#333",ga:"#555",fr:"#777",
+                     de:"#999",it:"#aaa",nl:"#c4c4c4"};
 
 function chart(vals, label, extra){
   const w=700,h=110,p=8;
@@ -96,7 +96,7 @@ function chart(vals, label, extra){
   s+=`<polyline points="${line(vals)}" fill="none" stroke="#000" stroke-width="1.3"/>`;
   if(extra) for(const [code,vs] of extra)
     s+=`<polyline points="${line(vs)}" fill="none" stroke="${LANG_COLORS[code]}" stroke-width="1"/>`;
-  s+=`<line class="cur" x1="${sx(0)}" y1="0" x2="${sx(0)}" y2="${h}" stroke="#c00" stroke-width="1.5"/>`;
+  s+=`<line class="cur" x1="${sx(0)}" y1="0" x2="${sx(0)}" y2="${h}" stroke="#888" stroke-width="1.5"/>`;
   return s+`</svg>`;
 }
 

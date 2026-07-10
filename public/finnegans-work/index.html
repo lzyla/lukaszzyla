@@ -432,8 +432,8 @@ function drawChart(){
   s+=`<polyline points="${vals.map((v,i)=>sx(i).toFixed(1)+','+sy(v).toFixed(1)).join(' ')}"
       fill="none" stroke="#000" stroke-width="1.5"/>`;
   s+=`<line id="ts-cur" x1="${sx(curIdx)}" y1="10" x2="${sx(curIdx)}" y2="${CH-CP}"
-      stroke="#c00" stroke-width="1.5"/>`;
-  s+=`<circle id="ts-dot" cx="${sx(curIdx)}" cy="${sy(vals[curIdx]).toFixed(1)}" r="5" fill="#c00"/>`;
+      stroke="#888" stroke-width="1.5"/>`;
+  s+=`<circle id="ts-dot" cx="${sx(curIdx)}" cy="${sy(vals[curIdx]).toFixed(1)}" r="5" fill="#000"/>`;
   s+="</svg>";
   $("#ts-chart").innerHTML=s;
   const svg=$("#ts-svg");
