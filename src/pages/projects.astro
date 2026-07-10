@@ -174,11 +174,24 @@ import Site from '../layouts/Site.astro';
     color: var(--ink);
     margin: 0 0 12px;
     padding-left: 26px;
-    display: flex;
+    display: inline-flex;
     align-items: baseline;
     gap: 12px;
     flex-wrap: wrap;
   }
+  .project-title::after {
+    content: '';
+    position: absolute;
+    left: 26px;
+    bottom: -6px;
+    width: calc(100% - 26px);
+    height: 2px;
+    background: #d86a2c;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
+  }
+  .project:hover .project-title::after { transform: scaleX(1); }
   .project-title::before {
     content: '';
     position: absolute;
