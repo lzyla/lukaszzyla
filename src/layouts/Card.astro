@@ -29,29 +29,9 @@ const {
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script is:inline>document.documentElement.classList.add('js-reveal');</script>
   </head>
   <body>
     <slot />
-    <script>
-      const els = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window && els.length) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add('is-visible');
-                io.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.2 }
-        );
-        els.forEach((el) => io.observe(el));
-      } else {
-        els.forEach((el) => el.classList.add('is-visible'));
-      }
-    </script>
   </body>
 </html>
 
@@ -191,24 +171,16 @@ const {
   /* Efekt w stylu kei-inc.jp — „mask reveal": tekst wyłania się spod maski,
      wjeżdżając lekko w górę, gdy wejdzie w kadr. */
   .reveal {
-    transition:
-      clip-path 0.8s cubic-bezier(0.22, 0.8, 0.24, 1),
-      transform 0.8s cubic-bezier(0.22, 0.8, 0.24, 1),
-      opacity 0.7s ease;
+    animation: revealUp 0.85s cubic-bezier(0.22, 0.8, 0.24, 1) both;
+    animation-delay: var(--rd, 0s);
     will-change: clip-path, transform;
   }
-  .js-reveal .reveal {
-    clip-path: inset(0 0 108% 0);
-    transform: translateY(16px);
-    opacity: 0;
-  }
-  .reveal.is-visible {
-    clip-path: inset(0 0 -14% 0);
-    transform: none;
-    opacity: 1;
+  @keyframes revealUp {
+    from { clip-path: inset(0 0 108% 0); transform: translateY(16px); opacity: 0; }
+    to   { clip-path: inset(0 0 -14% 0); transform: none; opacity: 1; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .js-reveal .reveal { clip-path: none; transform: none; opacity: 1; }
+    .reveal { animation: none; }
   }
 
   /* --- Intro / lede (strona główna) --- */
@@ -332,14 +304,7 @@ const {
   }
   .group-label:hover { color: var(--label); }
   .group-label:hover::after { transform: scaleX(1); }
-  /* podetykiety: mask-reveal (opóźnienie tylko na reveal, nie na hover/kolor) */
-  .group-label.reveal {
-    transition:
-      clip-path 0.8s cubic-bezier(0.22, 0.8, 0.24, 1) var(--rd, 0s),
-      transform 0.8s cubic-bezier(0.22, 0.8, 0.24, 1) var(--rd, 0s),
-      opacity 0.7s ease var(--rd, 0s),
-      color 0.2s ease;
-  }
+  /* podetykiety: schodkowe opóźnienie animacji reveal */
   .groups > div:nth-child(2) .group-label { --rd: 0.07s; }
   .groups > div:nth-child(3) .group-label { --rd: 0.14s; }
   .groups > div:nth-child(4) .group-label { --rd: 0.21s; }
@@ -352,6 +317,30 @@ const {
     color: var(--body);
   }
   .item strong { font-weight: 500; }
+
+  /* Marker pojedynczych wpisów (Workshops + Publications): kropka rosnąca na hover */
+  .groups .items--tight > li,
+  .groups .item {
+    position: relative;
+    padding-left: 26px;
+  }
+  .groups .items--tight > li::before,
+  .groups .item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--faint);
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+  .groups .items--tight > li:hover::before,
+  .groups .item:hover::before {
+    transform: scale(1.55);
+    background: var(--label);
+  }
 
   /* --- Kontakt --- */
   .contact {
