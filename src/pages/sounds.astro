@@ -1,5 +1,6 @@
 ---
 import Site from '../layouts/Site.astro';
+import GroupLabel from '../components/GroupLabel.astro';
 ---
 
 <Site title="Sounds — Łukasz Żyła" current="sounds">
@@ -25,10 +26,10 @@ import Site from '../layouts/Site.astro';
       <figcaption>As złe oko — Forest, Przegędza near Rybnik, 2025</figcaption>
     </figure>
 
-    <div class="entries">
+    <div class="groups">
       <div>
-        <div class="entry-label">Forest</div>
-        <p>
+        <GroupLabel>Forest</GroupLabel>
+        <p class="item">
           An immersive sound concert in the woods — Kanetowiec clearing,
           Przegędza near Rybnik (18 October 2025). Instead of instruments:
           rustling leaves, the breath of open space and animal echoes, captured
@@ -42,16 +43,16 @@ import Site from '../layouts/Site.astro';
         </p>
       </div>
       <div>
-        <div class="entry-label">Film</div>
-        <p>
+        <GroupLabel>Film</GroupLabel>
+        <p class="item">
           Live scores performed to film, responding to the image in real time —
           including the surrealist films of Jan Švankmajer and Tetsuo: The Iron
           Man (Shinya Tsukamoto) in a noise / industrial register.
         </p>
       </div>
       <div>
-        <div class="entry-label">Poetry</div>
-        <p>
+        <GroupLabel>Poetry</GroupLabel>
+        <p class="item">
           Live sound for poetry readings — in dialogue with the words, shaping
           the breath and rhythm of the reading. With poets Peter Waugh, Hanane
           Aad, Krzysztof Siwczyk, Robert Rybicki, Arkadiusz Kremza, Maciej
