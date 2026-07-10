@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+
+const posts = (await getCollection('annotations', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<Site title="Annotations — Łukasz Żyła" current="annotations">
+  <section>
+    <h1 class="sr-only">Annotations</h1>
+    {posts.length === 0 ? (
+      <p class="prose">No annotations yet.</p>
+    ) : (
+      <ul class="anno-list">
+        {posts.map((post) => (
+          <li>
+            <a href={`/annotations/${post.id}/`}>{post.data.title}</a>
+            <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+            {post.data.description && <p class="anno-desc">{post.data.description}</p>}
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Site>
+
+<style is:global>
+  .anno-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .anno-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    column-gap: 20px;
+    row-gap: 6px;
+  }
+  .anno-list a {
+    font-size: 21px;
+    line-height: 1.5;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .anno-list time {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .anno-desc {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--body);
+  }
+</style>

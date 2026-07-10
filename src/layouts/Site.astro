@@ -4,16 +4,17 @@ import Card from './Card.astro';
 interface Props {
   title: string;
   description?: string;
-  current?: string; // klucz aktywnej pozycji nav: projects | sounds | publications | workshops | bio
+  current?: string; // klucz aktywnej pozycji nav: annotations | projects | sounds | publications | workshops | bio
 }
 const { title, description, current } = Astro.props;
 
 const nav = [
-  { key: 'projects', n: 1, label: 'Projects', href: '/projects/' },
-  { key: 'publications', n: 2, label: 'Publications', href: '/publications/' },
-  { key: 'workshops', n: 3, label: 'Workshops', href: '/workshops/' },
-  { key: 'sounds', n: 4, label: 'Sounds', href: '/sounds/' },
-  { key: 'bio', n: 5, label: 'Bio', href: '/bio/' },
+  { key: 'annotations', n: 1, label: 'Annotations', href: '/annotations/' },
+  { key: 'projects', n: 2, label: 'Projects', href: '/projects/' },
+  { key: 'publications', n: 3, label: 'Publications', href: '/publications/' },
+  { key: 'workshops', n: 4, label: 'Workshops', href: '/workshops/' },
+  { key: 'sounds', n: 5, label: 'Sounds', href: '/sounds/' },
+  { key: 'bio', n: 6, label: 'Bio', href: '/bio/' },
 ];
 
 // Codrops LineHoverStyles #14 ("carme") — odręczne, rysujące się podkreślenie.

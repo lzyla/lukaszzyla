@@ -3,35 +3,209 @@ import Site from '../layouts/Site.astro';
 ---
 
 <Site title="Projects — Łukasz Żyła" current="projects">
-  <section>
+  <section class="projects">
     <h1 class="sr-only">Projects</h1>
-    <ul class="items">
-      <li>
-        <strong>#OtwartePaństwo</strong> — a civic-tech platform aggregating and
-        standardizing scattered public-institution documents (official journals,
-        BIPs) into one searchable, quotable source.
-      </li>
-      <li>
+
+    <article class="project">
+      <h2 class="project-title">#OtwartePaństwo</h2>
+      <p class="project-lead">
+        A civic-tech platform that gathers scattered official journals into one
+        searchable, citable source of binding law.
+      </p>
+      <p>
+        In Poland a law does not bind the moment parliament passes it — only once
+        it is promulgated. Under Art. 88 of the Constitution, entry into force is
+        conditional on publication. Since 1 January 2012 the official journals
+        (<em>Dziennik Ustaw</em>, <em>Monitor Polski</em> and dozens of
+        institutional and regional gazettes) are no longer printed at all: the
+        electronic edition is the sole authentic source of the law in force, and
+        the date of online publication is the date the act legally exists.
+      </p>
+      <p>
+        #OtwartePaństwo aggregates and standardizes these dispersed publications —
+        each with its own format, numbering and layout — into a single,
+        full-text-searchable corpus that you can quote from and link to precisely.
+      </p>
+      <p class="project-note">
+        It treats “the moment a rule becomes binding” as data: promulgation dates,
+        journal positions and effective dates become queryable rather than buried
+        in PDFs.
+      </p>
+    </article>
+
+    <article class="project">
+      <h2 class="project-title">
         <a href="https://ktorzadzi.pl" target="_blank" rel="noopener">ktorzadzi.pl&nbsp;↗</a>
-        — a data-journalism app visualizing power networks between politics and
-        business, backed by news from official government sources.
-      </li>
-      <li>
+      </h2>
+      <p class="project-lead">
+        The first Polish app to visualize the power network between politics and
+        business, built entirely from official registers.
+      </p>
+      <p>
+        Ties between public figures and companies are technically public but
+        scattered across separate databases. ktorzadzi.pl pulls from official
+        sources — the National Court Register (KRS) and the Central Register of
+        Business Activity (CEIDG) — cross-references them and reconstructs the
+        relationships: who sat on which board, where and when, and how people and
+        institutions connect.
+      </p>
+      <p>
+        It was built by the Media&nbsp;3.0 foundation, inspired by and developed
+        in cooperation with Spain's
+        <a href="https://civio.es/poder/que-es-quien-manda/" target="_blank" rel="noopener">Fundación Civio&nbsp;↗</a>
+        and its <em>Quién manda</em> (“Who governs”) project — a map of power that
+        ran from 2014 to 2023 and became a European reference point for this kind
+        of accountability journalism.
+      </p>
+      <p class="project-note">
+        The innovation was methodological: turning raw, disconnected public
+        registers into a navigable graph of influence, quotable back to its
+        official source.
+      </p>
+    </article>
+
+    <article class="project">
+      <h2 class="project-title">
         <a href="https://jaturzadze.pl" target="_blank" rel="noopener">jaturzadze.pl&nbsp;↗</a>
-        — an app processing and visualizing local-government financial data;
-        award-winning prototype (3rd place at Poland's first public-data
-        hackathon), later revisited in a 2025 MEN edition.
-      </li>
-      <li>
-        <strong>Aplikacja Parlament / Sejm</strong> — the first app processing
-        live data from the Polish Sejm — real-time parliamentary data as an
-        accessible feed.
-      </li>
-      <li>
-        <strong>Aplikacja Wojaczek</strong> — an audio-literary mobile app
-        (“In Wojaczek's Footsteps”) blending cultural heritage, media production
-        and location-based storytelling.
-      </li>
-    </ul>
+      </h2>
+      <p class="project-lead">
+        Local-government budgets, made legible — an app that processes and
+        visualizes municipal financial data.
+      </p>
+      <p>
+        Local budgets are published, but as spreadsheets few residents can read.
+        jaturzadze.pl ingests that financial data and turns it into clear
+        visualizations of where public money comes from and where it goes.
+      </p>
+      <p>
+        The prototype won 3rd place at Poland's first government open-data
+        hackathon (Ministry of Digital Affairs, 2016), built with the
+        Media&nbsp;3.0 / SAP team, and was later revisited in a 2025 edition.
+      </p>
+      <p class="project-note">
+        A recurring theme across these projects: the data already exists and is
+        public — the work is making it usable.
+      </p>
+    </article>
+
+    <article class="project">
+      <h2 class="project-title">Aplikacja Parlament / Sejm</h2>
+      <p class="project-lead">
+        The first app to process live data from the Polish Sejm — parliamentary
+        work turned into an accessible, real-time feed.
+      </p>
+      <p>
+        Votes, sittings, MPs and legislative motions were hard to follow as they
+        happened. The app captured the Sejm's data stream and rendered it as a
+        readable feed, in cooperation with the Chancellery of the Sejm
+        (Kancelaria Sejmu).
+      </p>
+      <p class="project-note">
+        It anticipated what is now taken for granted — parliamentary transparency
+        as a live, machine-readable data source rather than static minutes.
+      </p>
+    </article>
+
+    <article class="project">
+      <h2 class="project-title">
+        <a href="https://wojaczek.vercel.app/" target="_blank" rel="noopener">Śladami Wojaczka&nbsp;↗</a>
+      </h2>
+      <p class="project-lead">
+        An audio-literary, augmented-reality walk through the poetry of Rafał
+        Wojaczek (1945–1971), the Silesian <em>poète maudit</em>.
+      </p>
+      <p>
+        The app anchors Wojaczek's poems to the real places he lived and wrote in,
+        combining augmented reality (AR), an audio layer and location-based
+        storytelling, with text mining of his corpus to surface recurring motifs.
+        It doubles as cultural-heritage archiving — preserving and re-presenting a
+        body of work tied to a specific city and landscape.
+      </p>
+      <p class="project-note">
+        Literary heritage as something you walk through: the city becomes the
+        interface, and the poems appear where they belong.
+      </p>
+    </article>
+
+    <article class="project">
+      <h2 class="project-title">Finnegans Work <span class="badge">in progress</span></h2>
+      <p class="project-lead">
+        A research project mining James Joyce's <em>Finnegans Wake</em> for
+        pattern and meaning across its many languages.
+      </p>
+      <p>
+        <em>Finnegans Wake</em> is written in a dense, portmanteau idiom that
+        braids together dozens of languages and resists linear reading. Finnegans
+        Work applies text mining and semantic analysis, together with experiments
+        in neural networks and NLP, to detect patterns and help decode the book's
+        multilingual layers.
+      </p>
+      <p class="project-note">
+        The name is a nod to the <em>Wake</em> itself — treating one of
+        literature's hardest texts as a computational-linguistics problem, without
+        pretending to “solve” it.
+      </p>
+    </article>
   </section>
 </Site>
+
+<style is:global>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+  .project { max-width: 62ch; }
+  .project-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .project-title a { color: var(--ink); text-decoration: none; }
+  .project-lead {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .project p {
+    font-size: 17px;
+    line-height: 1.62;
+    color: var(--body);
+    margin: 0 0 12px;
+  }
+  .project p:last-child { margin: 0; }
+  .project-note {
+    color: var(--label);
+    font-style: italic;
+  }
+  .project .badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 2px 9px;
+    white-space: nowrap;
+  }
+  /* Link highlight spójny z resztą strony */
+  .project a {
+    background-image: linear-gradient(var(--hl), var(--hl));
+    background-repeat: no-repeat;
+    background-position: 0 92%;
+    background-size: 0% 0.3em;
+    transition: background-size 0.28s ease;
+    border-radius: 1px;
+  }
+  .project a:hover { background-size: 100% 0.3em; }
+</style>
