@@ -13,14 +13,14 @@ import Site from '../layouts/Site.astro';
       loading="eager"
     />
     <div class="lede">
-      <p>
+      <p class="reveal">
         Hi! I'm a lawyer, researcher and open-data specialist working where
         data, journalism, law and AI meet. I wrote the first Polish book on data
         journalism — <a href="/publications/">Data Journalism and Data Storytelling</a>
         — and teach in the Social Informatics programme at
         <a href="https://informatyka-spoleczna.agh.edu.pl" target="_blank" rel="noopener">AGH University of Krakow&nbsp;↗</a>.
       </p>
-      <p>
+      <p class="reveal reveal--delay">
         In my free time I make ambient sound as <em>złe oko</em>, built from
         field recordings, guitar and neural-network synthesis.
       </p>
@@ -49,6 +49,7 @@ import Site from '../layouts/Site.astro';
     transform: translateY(-2px);
   }
   .intro-block .lede { flex: 1 1 auto; min-width: 0; }
+  .reveal--delay { transition-delay: 0.14s; }
 
   @media (max-width: 768px) {
     .intro-block {

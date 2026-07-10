@@ -29,9 +29,29 @@ const {
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>document.documentElement.classList.add('js-reveal');</script>
   </head>
   <body>
     <slot />
+    <script>
+      const els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && els.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add('is-visible'));
+      }
+    </script>
   </body>
 </html>
 
@@ -161,13 +181,35 @@ const {
     transition: stroke-dashoffset 0.6s cubic-bezier(0.7, 0, 0.3, 1);
   }
   .nav a:hover .scribble path,
-  .name:hover .scribble path,
-  .group-label:hover .scribble path {
+  .name:hover .scribble path {
     stroke-dashoffset: 0;
     transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
     transition-duration: 0.3s;
   }
   .nav a[aria-current='page'] .scribble path { stroke-dashoffset: 0; }
+
+  /* Efekt w stylu kei-inc.jp — „mask reveal": tekst wyłania się spod maski,
+     wjeżdżając lekko w górę, gdy wejdzie w kadr. */
+  .reveal {
+    transition:
+      clip-path 0.8s cubic-bezier(0.22, 0.8, 0.24, 1),
+      transform 0.8s cubic-bezier(0.22, 0.8, 0.24, 1),
+      opacity 0.7s ease;
+    will-change: clip-path, transform;
+  }
+  .js-reveal .reveal {
+    clip-path: inset(0 0 108% 0);
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  .reveal.is-visible {
+    clip-path: inset(0 0 -14% 0);
+    transform: none;
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js-reveal .reveal { clip-path: none; transform: none; opacity: 1; }
+  }
 
   /* --- Intro / lede (strona główna) --- */
   .lede {
@@ -276,7 +318,20 @@ const {
     margin-bottom: 13px;
     transition: color 0.2s ease;
   }
+  .group-label::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s ease;
+  }
   .group-label:hover { color: var(--label); }
+  .group-label:hover::after { transform: scaleX(1); }
   .item {
     margin: 0;
     font-size: 21px;
