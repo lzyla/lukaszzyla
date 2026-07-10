@@ -1,0 +1,302 @@
+---
+// Powłoka HTML strony-wizytówki: <head>, fonty, tokeny i wszystkie wspólne style.
+// Style są globalne (is:global) świadomie — dzięki temu działają też na treści
+// wstawianej przez podstrony (slot), której scoped-CSS Astro by nie objął.
+interface Props {
+  title: string;
+  description?: string;
+}
+const {
+  title,
+  description = 'Łukasz Żyła — lawyer, researcher and open-data specialist working where data, journalism, law and AI meet.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>·</text></svg>" />
+
+    <!-- Fonty: Newsreader (serif) + IBM Plex Mono (etykiety) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    /* Design tokens (2a) */
+    --page-bg: #ffffff;
+    --ink: #1b1815;        /* nagłówki / nazwisko / wyróżnienia */
+    --body: #26221e;       /* tekst główny */
+    --muted: #8a847c;      /* etykiety sekcji / nav / podpis */
+    --faint: #a9a298;      /* etykiety podgrup */
+    --label: #423d37;      /* tytuły sekcji (ciemniejsze) */
+    --rule: rgba(27, 24, 21, 0.14);
+    --hl: rgba(240, 205, 118, 0.55); /* delikatny „zakreślacz" na hover */
+
+    --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* Ukrycie wizualne z zachowaniem dostępności (czytniki ekranu / SEO) */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  html {
+    background: var(--page-bg);
+    color: var(--body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-serif);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  /* Linki w treści: delikatny „zakreślacz" wjeżdżający na hover */
+  .card :is(.lede, .items, .item, .entries, .prose, .contact) a {
+    background-image: linear-gradient(var(--hl), var(--hl));
+    background-repeat: no-repeat;
+    background-position: 0 92%;
+    background-size: 0% 0.3em;
+    transition: background-size 0.28s ease;
+    border-radius: 1px;
+  }
+  .card :is(.lede, .items, .item, .entries, .prose, .contact) a:hover {
+    background-size: 100% 0.3em;
+  }
+
+  /* --- Kontener karty --- */
+  .card {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 72px 56px 64px;
+    color: var(--ink);
+  }
+
+  /* --- Masthead --- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 58px;
+  }
+  .masthead .name {
+    position: relative;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+  .nav a {
+    position: relative;
+    color: var(--label);
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+  }
+  .nav a:hover { color: var(--ink); }
+  .nav a[aria-current='page'] { color: var(--ink); }
+
+  /* Codrops "scribble" (#14) — odręczne podkreślenie rysujące się na hover */
+  .scribble {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 8px;
+    pointer-events: none;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+  }
+  .scribble path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .nav a:hover .scribble path,
+  .name:hover .scribble path,
+  .group-label:hover .scribble path {
+    stroke-dashoffset: 0;
+    transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+    transition-duration: 0.3s;
+  }
+  .nav a[aria-current='page'] .scribble path { stroke-dashoffset: 0; }
+
+  /* --- Intro / lede (strona główna) --- */
+  .lede {
+    font-size: 21px;
+    line-height: 1.62;
+    color: var(--body);
+  }
+  .lede p { margin: 0 0 20px; }
+  .lede p:last-child { margin: 0; }
+
+  /* --- Linie --- */
+  .rule { border: none; border-top: 1px solid var(--rule); }
+  .rule--contact { margin: 52px 0 0; }
+
+  /* --- Etykieta sekcji --- */
+  .section-label {
+    margin: 0 0 24px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--label);
+  }
+  .section-label--wide { margin-bottom: 26px; }
+
+  /* --- Listy pozycji --- */
+  .items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 21px;
+    line-height: 1.58;
+    color: var(--body);
+  }
+  .items--tight { gap: 13px; line-height: 1.55; }
+  .items strong { font-weight: 500; }
+
+  /* --- Bloki prozy --- */
+  .prose {
+    font-size: 21px;
+    line-height: 1.62;
+    color: var(--body);
+  }
+  .prose p { margin: 0 0 18px; }
+  .prose p:last-child { margin: 0; }
+  .prose--bio {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .prose--bio p { margin: 0; }
+
+  /* --- Figura (Sounds) --- */
+  .figure { margin: 34px 0 30px; }
+  .figure img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: grayscale(1) contrast(1.05) brightness(0.96);
+  }
+  .figure figcaption {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* --- Podwpisy (Sounds) --- */
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--body);
+  }
+  .entry-label { font-weight: 500; margin-bottom: 4px; }
+  .entries p { margin: 0; }
+
+  /* --- Grupy (Publications / Workshops) --- */
+  .groups {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .group-label {
+    display: inline-block;
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 13px;
+    transition: color 0.2s ease;
+  }
+  .group-label:hover { color: var(--label); }
+  .item {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.58;
+    color: var(--body);
+  }
+  .item strong { font-weight: 500; }
+
+  /* --- Kontakt --- */
+  .contact {
+    margin: 28px 0 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--body);
+  }
+
+  /* --- Responsywność --- */
+  @media (max-width: 768px) {
+    .card { padding: 40px 24px 56px; }
+    .masthead { margin-bottom: 40px; }
+    .figure img { height: 240px; }
+  }
+</style>
