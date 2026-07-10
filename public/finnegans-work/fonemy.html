@@ -12,10 +12,47 @@ small{color:#555}
 </style>
 </head>
 <body>
-<p><a href="report.html">&larr; raport główny</a> &middot;
-   <a href="muzyka.html">muzyka (IPA)</a> &middot;
-   <a href="lingua.html">języki i dźwięki</a> &middot;
-   <a href="prosta.html">wersja tekstowa</a></p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+.lz-mast{max-width:80ch;margin:1.6em auto .4em;padding:0 1em;
+ display:flex;flex-wrap:wrap;align-items:baseline;gap:.9em 1.6em}
+.lz-mast .lz-name{font-family:'Newsreader','Iowan Old Style',Georgia,serif;
+ font-size:22px;font-weight:500;color:#1b1815;text-decoration:none}
+.lz-mast nav{display:flex;flex-wrap:wrap;gap:.2em 1.15em;margin-left:auto}
+.lz-mast nav a,.lz-sub a{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+ font-size:14px;color:#6b6b6b;text-decoration:none;
+ background-image:linear-gradient(#d86a2c,#d86a2c);background-repeat:no-repeat;
+ background-position:0 100%;background-size:0% 1.5px;
+ transition:background-size .3s cubic-bezier(.22,.8,.24,1),color .2s}
+.lz-mast nav a:hover,.lz-sub a:hover{color:#1b1815;background-size:100% 1.5px}
+.lz-sub{max-width:80ch;margin:0 auto 1.2em;padding:.5em 1em .9em;
+ border-bottom:1px solid #e5e5e5;font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+ font-size:13px;color:#8a8a8a}
+.lz-sub b{color:#1b1815;font-weight:500}
+.lz-sub a[aria-current]{color:#1b1815}
+</style>
+<div class="lz-mast">
+  <a class="lz-name" href="/">Łukasz Żyła</a>
+  <nav aria-label="Sections">
+    <a href="/annotations/">1&nbsp;Annotations</a>
+    <a href="/projects/">2&nbsp;Projects</a>
+    <a href="/publications/">3&nbsp;Publications</a>
+    <a href="/workshops/">4&nbsp;Workshops</a>
+    <a href="/sounds/">5&nbsp;Sounds</a>
+    <a href="/bio/">6&nbsp;Bio</a>
+  </nav>
+</div>
+<div class="lz-sub"><b>Finnegans Work</b> —
+  <a href="fonologia.html">phonology</a> ·
+  <a href="report.html">raport</a> ·
+  <a href="lingua.html">języki</a> ·
+  <a href="muzyka.html">muzyka</a> ·
+  <a href="fonemy.html" aria-current="page">fonemy</a> ·
+  <a href="prosta.html">tekst</a>
+</div>
+
 <h1>Echa fonemowe w „Finnegans Wake"</h1>
 <p>Rymy, asonanse, aliteracje i echa spółgłoskowe liczone na fonemach
 IPA wewnątrz zdań — poetycka maszyneria prozy Joyce'a w liczbach.</p>
