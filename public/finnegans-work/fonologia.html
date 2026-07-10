@@ -87,8 +87,8 @@ down through all christian minstrelsy.</p>
 </blockquote>
 
 
-<h2>A note from the author</h2>
-<p>I first encountered <i>Finnegans Wake</i> in secondary school, through
+<h2>My rewriting</h2>
+<p>Every reading is a new writing — and this page is mine: <i>Finnegans Wake</i> rewritten into phonemes, counts and curves. I first encountered <i>Finnegans Wake</i> in secondary school, through
 Maciej Słomczyński's Polish translations of selected fragments. After
 <i>Ulysses</i> and Pynchon, this was the literature that kept pulling me
 back — yet my English, or more precisely Joyce's English, would not let
@@ -101,7 +101,7 @@ with it, I have discovered plenty of patterns — but I still hope that
 one day I will experience here what I experienced with
 <i>Ulysses</i>.</p>
 
-<h2>A note on tools</h2>
+<h2>My machines</h2>
 <p>This project is an exercise in machine reading, so it is only fair
 to disclose the machines — concretely. Every number on this page comes
 from a deterministic, fully re-runnable pipeline: twelve Python modules
@@ -133,7 +133,7 @@ in the raw statistics of its letters. The symmetry is fitting: Joyce
 compressed dozens of languages into single portmanteau words; language
 models decompress such words back into probabilities.</p>
 
-<h2>What I did and what came out</h2>
+<h2>What I did and what fell out</h2>
 <p>I took the full text of <i>Finnegans Wake</i> (1939) —
 219,191 words, 57,718 distinct forms — and
 rewrote it as phonemes, the sounds of speech in IPA notation. On that
@@ -148,7 +148,7 @@ markedly trochaic (DA-da, the pulse of a lullaby); and the prose turns
 out to be as dense with rhyme as verse — over ten thousand rhyming
 pairs within sentences.</p>
 
-<h2>1. Material and transcription</h2>
+<h2>1. What I read and how I respelled it</h2>
 <p>As the basis of the transcription I took the CMU Pronouncing
 Dictionary (ARPABET), which represents General American; I mapped its
 symbols onto the IPA. Text coverage: 80.54% of tokens.
@@ -160,7 +160,7 @@ of English spelling (⟨sh⟩→/ʃ/, ⟨ph⟩→/f/, ⟨igh⟩→/aɪ/, ⟨c⟩
 Total material: 869,056 segments.</p>
 <p>Vowels and diphthongs (15): ⟨AA⟩→/ɑ/ ⟨AE⟩→/æ/ ⟨AH⟩→/ʌ/ ⟨AO⟩→/ɔ/ ⟨AW⟩→/aʊ/ ⟨AY⟩→/aɪ/ ⟨EH⟩→/ɛ/ ⟨ER⟩→/ɝ/ ⟨EY⟩→/eɪ/ ⟨IH⟩→/ɪ/ ⟨IY⟩→/i/ ⟨OW⟩→/oʊ/ ⟨OY⟩→/ɔɪ/ ⟨UH⟩→/ʊ/ ⟨UW⟩→/u/; unstressed AH0 is rendered as schwa /ə/.<br>Consonants (24): ⟨B⟩→/b/ ⟨CH⟩→/tʃ/ ⟨D⟩→/d/ ⟨DH⟩→/ð/ ⟨F⟩→/f/ ⟨G⟩→/ɡ/ ⟨HH⟩→/h/ ⟨JH⟩→/dʒ/ ⟨K⟩→/k/ ⟨L⟩→/l/ ⟨M⟩→/m/ ⟨N⟩→/n/ ⟨NG⟩→/ŋ/ ⟨P⟩→/p/ ⟨R⟩→/ɹ/ ⟨S⟩→/s/ ⟨SH⟩→/ʃ/ ⟨T⟩→/t/ ⟨TH⟩→/θ/ ⟨V⟩→/v/ ⟨W⟩→/w/ ⟨Y⟩→/j/ ⟨Z⟩→/z/ ⟨ZH⟩→/ʒ/.</p>
 
-<h2>2. Segment frequencies</h2>
+<h2>2. The sounds I counted</h2>
 <p>Vowels make up 38.8% of all segments. Switch the subset
 to compare the sound profile of dictionary words with Joyce's
 coinages:</p>
@@ -177,12 +177,12 @@ the CMUdict convention, in which unstressed ⟨IH0⟩ is not reduced to
 schwa (see §8). The deviations concentrate in the neologisms —
 switch the toggle above to see /k/, /æ/ and /ʃ/ climb.</p>
 
-<h2>3. Consonants: place × manner of articulation</h2>
+<h2>3. How I mapped the consonants (place × manner)</h2>
 <p>Values: share of each phoneme in all segments of the text (%);
 cell shading is proportional to the combined share of its phonemes.</p>
 <table border='1' cellpadding='4' style='border-collapse:collapse;font-size:.9em'><tr><th></th><th>bilabial</th><th>labiodental</th><th>dental</th><th>alveolar</th><th>postalveolar</th><th>palatal</th><th>velar</th><th>labial-velar</th><th>glottal</th></tr><tr><th>plosive</th><td style='background:rgba(0,0,0,0.109)'>/b/&nbsp;2.17 /p/&nbsp;2.16</td><td></td><td></td><td style='background:rgba(0,0,0,0.260)'>/t/&nbsp;5.96 /d/&nbsp;4.39</td><td></td><td></td><td style='background:rgba(0,0,0,0.101)'>/k/&nbsp;3.02 /ɡ/&nbsp;1.01</td><td></td><td></td></tr><tr><th>affricate</th><td></td><td></td><td></td><td></td><td style='background:rgba(0,0,0,0.026)'>/dʒ/&nbsp;0.53 /tʃ/&nbsp;0.51</td><td></td><td></td><td></td><td></td></tr><tr><th>fricative</th><td></td><td style='background:rgba(0,0,0,0.095)'>/f/&nbsp;1.97 /v/&nbsp;1.81</td><td style='background:rgba(0,0,0,0.074)'>/ð/&nbsp;2.40 /θ/&nbsp;0.55</td><td style='background:rgba(0,0,0,0.200)'>/s/&nbsp;5.84 /z/&nbsp;2.12</td><td style='background:rgba(0,0,0,0.018)'>/ʃ/&nbsp;0.69 /ʒ/&nbsp;0.03</td><td></td><td></td><td></td><td style='background:rgba(0,0,0,0.052)'>/h/&nbsp;2.07</td></tr><tr><th>nasal</th><td style='background:rgba(0,0,0,0.079)'>/m/&nbsp;3.15</td><td></td><td></td><td style='background:rgba(0,0,0,0.166)'>/n/&nbsp;6.61</td><td></td><td></td><td style='background:rgba(0,0,0,0.028)'>/ŋ/&nbsp;1.10</td><td></td><td></td></tr><tr><th>lateral</th><td></td><td></td><td></td><td style='background:rgba(0,0,0,0.121)'>/l/&nbsp;4.83</td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>approximant</th><td></td><td></td><td></td><td style='background:rgba(0,0,0,0.141)'>/ɹ/&nbsp;5.60</td><td></td><td style='background:rgba(0,0,0,0.015)'>/j/&nbsp;0.60</td><td></td><td style='background:rgba(0,0,0,0.052)'>/w/&nbsp;2.06</td><td></td></tr></table>
 
-<h2>4. Vowels: height × backness</h2>
+<h2>4. Where I placed the vowels (height × backness)</h2>
 <p>Vowel nuclei on the IPA quadrilateral; dot area is proportional to
 frequency. The toggle above (§2) applies here too — the chart redraws
 for the chosen subset.</p>
@@ -190,7 +190,7 @@ for the chosen subset.</p>
 <table border='1' cellpadding='4' style='border-collapse:collapse'>
 <tr><th>height</th><th>backness</th><th>share</th></tr><tr><td>near-close</td><td>front</td><td style='text-align:right'>6.78%</td></tr><tr><td>mid</td><td>central</td><td style='text-align:right'>6.29%</td></tr><tr><td>open-mid</td><td>front</td><td style='text-align:right'>4.70%</td></tr><tr><td>near-open</td><td>front</td><td style='text-align:right'>4.21%</td></tr><tr><td>open-mid</td><td>central</td><td style='text-align:right'>3.22%</td></tr><tr><td>open</td><td>back</td><td style='text-align:right'>2.96%</td></tr><tr><td>close</td><td>front</td><td style='text-align:right'>2.71%</td></tr><tr><td>open</td><td>front</td><td style='text-align:right'>2.28%</td></tr><tr><td>open-mid</td><td>back</td><td style='text-align:right'>1.64%</td></tr><tr><td>close</td><td>back</td><td style='text-align:right'>1.54%</td></tr><tr><td>close-mid</td><td>front</td><td style='text-align:right'>1.17%</td></tr></table>
 
-<h2>5. Sonority</h2>
+<h2>5. How I measured the singing (sonority)</h2>
 <p>I adopted a sonority scale modelled on the hierarchies of Selkirk
 (1984) and Clements (1990) (on physical correlates of sonority cf.
 Parker 2008), normalised to 1–10: open vowels 10, mid 9, close 8;
@@ -212,7 +212,7 @@ of rises towards vowels and dips into consonants:</p>
 <p><select id="contour-sel"></select></p>
 <div id="contour"></div>
 
-<h2>6. Lexical prosody</h2>
+<h2>6. The rhythm I heard (lexical prosody)</h2>
 <p>Stress patterns of polysyllabic words (CMUdict data; DA = stressed
 syllable). I use foot names for the lexical stress shapes of words,
 not for verse metre. Distribution of the most frequent patterns:</p>
@@ -229,7 +229,7 @@ carried out. Mean word length: 1.539 syllables
 in syllables (tokens):</p>
 <svg viewBox='0 0 640 172' role='img'><text x='74' y='14' text-anchor='end' font-size='12'>1 syll.</text><rect x='80' y='2' width='488.0' height='16' fill='#333'/><text x='573.0' y='14' font-size='11' fill='#444'>146,056</text><text x='74' y='35' text-anchor='end' font-size='12'>2 syll.</text><rect x='80' y='23' width='145.7' height='16' fill='#333'/><text x='230.7' y='35' font-size='11' fill='#444'>43,619</text><text x='74' y='56' text-anchor='end' font-size='12'>3 syll.</text><rect x='80' y='44' width='62.8' height='16' fill='#333'/><text x='147.8' y='56' font-size='11' fill='#444'>18,802</text><text x='74' y='77' text-anchor='end' font-size='12'>4 syll.</text><rect x='80' y='65' width='24.8' height='16' fill='#333'/><text x='109.8' y='77' font-size='11' fill='#444'>7,416</text><text x='74' y='98' text-anchor='end' font-size='12'>5 syll.</text><rect x='80' y='86' width='8.0' height='16' fill='#333'/><text x='93.0' y='98' font-size='11' fill='#444'>2,396</text><text x='74' y='119' text-anchor='end' font-size='12'>6 syll.</text><rect x='80' y='107' width='2.1' height='16' fill='#333'/><text x='87.1' y='119' font-size='11' fill='#444'>638</text><text x='74' y='140' text-anchor='end' font-size='12'>7 syll.</text><rect x='80' y='128' width='0.5' height='16' fill='#333'/><text x='85.5' y='140' font-size='11' fill='#444'>144</text><text x='74' y='161' text-anchor='end' font-size='12'>8 syll.</text><rect x='80' y='149' width='0.4' height='16' fill='#333'/><text x='85.4' y='161' font-size='11' fill='#444'>115</text></svg>
 
-<h2>7. Sound figures within the sentence</h2>
+<h2>7. The echoes I hunted (sound figures in the sentence)</h2>
 <p>The domain of observation is the orthographic sentence (split at
 ⟨. ! ?⟩; n = 15,061). I excluded function words from
 the rhyme and paronomasia rankings. How I defined each figure:</p>
@@ -282,7 +282,7 @@ alternations familiar from English ablaut reduplication:</p>
 <table border='1' cellpadding='4' style='border-collapse:collapse'>
 <tr><th>pair</th><th>n</th></tr><tr><td><i>like</i> ~ <i>look</i></td><td style='text-align:right'>15</td></tr><tr><td><i>man</i> ~ <i>many</i></td><td style='text-align:right'>10</td></tr><tr><td><i>last</i> ~ <i>lost</i></td><td style='text-align:right'>7</td></tr><tr><td><i>live</i> ~ <i>love</i></td><td style='text-align:right'>6</td></tr><tr><td><i>back</i> ~ <i>buck</i></td><td style='text-align:right'>4</td></tr><tr><td><i>tap</i> ~ <i>tip</i></td><td style='text-align:right'>4</td></tr><tr><td><i>along</i> ~ <i>long</i></td><td style='text-align:right'>4</td></tr><tr><td><i>lead</i> ~ <i>old</i></td><td style='text-align:right'>4</td></tr><tr><td><i>sing</i> ~ <i>song</i></td><td style='text-align:right'>4</td></tr><tr><td><i>came</i> ~ <i>come</i></td><td style='text-align:right'>4</td></tr><tr><td><i>feel</i> ~ <i>full</i></td><td style='text-align:right'>4</td></tr><tr><td><i>find</i> ~ <i>found</i></td><td style='text-align:right'>4</td></tr><tr><td><i>dear</i> ~ <i>dearo</i></td><td style='text-align:right'>4</td></tr><tr><td><i>laughed</i> ~ <i>left</i></td><td style='text-align:right'>3</td></tr></table>
 
-<h2>8. Methodological limitations</h2>
+<h2>8. Where I may be wrong</h2>
 <ul>
 <li>The transcription reflects General American, while the sound
 substrate of the text is Hiberno-English; the differences concern,
@@ -307,7 +307,7 @@ exact-rhyme definition; with function words excluded, their share in
 the rankings is marginal.</li>
 </ul>
 
-<h2>References and data sources</h2>
+<h2>What I stood on (references and data)</h2>
 <ul>
 <li>International Phonetic Association (1999). <i>Handbook of the
 IPA</i>. Cambridge University Press.</li>
@@ -331,7 +331,7 @@ of sonority. <i>Journal of Phonetics</i>, 36(1), 55–90.</li>
 (public domain in the EU).</li>
 </ul>
 
-<h2>Explore the book as a time series</h2>
+<h2>Walk the book with me (a time series)</h2>
 <p>The text is divided into 100 equal windows (~2,200 words each).
 Pick a measure and move your mouse across the chart — the crosshair
 follows and the exact value is read out below (the slider does the
