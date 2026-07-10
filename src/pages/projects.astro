@@ -157,19 +157,42 @@ import Site from '../layouts/Site.astro';
   .projects {
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    gap: 0;
   }
-  .project { max-width: 62ch; }
+  .project {
+    max-width: 62ch;
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .projects > .project:first-child { padding-top: 0; border-top: none; }
+  .projects > .project:last-child { padding-bottom: 0; }
   .project-title {
+    position: relative;
     font-size: 24px;
     font-weight: 500;
     line-height: 1.25;
     color: var(--ink);
     margin: 0 0 12px;
+    padding-left: 28px;
     display: flex;
     align-items: baseline;
     gap: 12px;
     flex-wrap: wrap;
+  }
+  .project-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--faint);
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+  .project:hover .project-title::before {
+    transform: scale(1.55);
+    background: var(--label);
   }
   .project-title a { color: var(--ink); text-decoration: none; }
   .project-lead {
@@ -202,14 +225,13 @@ import Site from '../layouts/Site.astro';
     padding: 2px 9px;
     white-space: nowrap;
   }
-  /* Link highlight spójny z resztą strony */
-  .project a {
-    background-image: linear-gradient(var(--hl), var(--hl));
-    background-repeat: no-repeat;
-    background-position: 0 92%;
-    background-size: 0% 0.3em;
-    transition: background-size 0.28s ease;
-    border-radius: 1px;
+  /* Linki w treści projektów: zwykłe cienkie podkreślenie */
+  .project p a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: opacity 0.18s ease;
   }
-  .project a:hover { background-size: 100% 0.3em; }
+  .project p a:hover { opacity: 0.6; }
+  .project-title a:hover { opacity: 0.6; }
 </style>
