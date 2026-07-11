@@ -106,7 +106,7 @@ import GroupLabel from '../components/GroupLabel.astro';
     };
     const spawn = () => {
       const w = layer.clientWidth, h = layer.clientHeight;
-      if (!w || !h || layer.childElementCount > 30) return;
+      if (!w || !h || layer.childElementCount > 70) return;
       const el = document.createElement('div');
       el.className = 'sk';
       const size = 9 + Math.random() * 9;
@@ -125,9 +125,10 @@ import GroupLabel from '../components/GroupLabel.astro';
     };
     const loop = () => {
       spawn();
-      if (Math.random() < 0.6) spawn();
-      if (Math.random() < 0.3) spawn();
-      setTimeout(loop, 130 + Math.random() * 360);
+      spawn();
+      if (Math.random() < 0.7) spawn();
+      if (Math.random() < 0.4) spawn();
+      setTimeout(loop, 90 + Math.random() * 240);
     };
     loop();
   }
