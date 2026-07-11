@@ -22,7 +22,10 @@ import GroupLabel from '../components/GroupLabel.astro';
     </div>
 
     <figure class="figure">
-      <img src="/assets/lukasz.jpg" alt="Łukasz Żyła performing as złe oko in the Forest sound installation" loading="lazy" />
+      <div class="figure-media">
+        <img src="/assets/lukasz.jpg" alt="Łukasz Żyła performing as złe oko in the Forest sound installation" loading="lazy" />
+        <div class="skulls" id="skulls" aria-hidden="true"></div>
+      </div>
       <figcaption>As złe oko — Forest, Przegędza near Rybnik, 2025</figcaption>
     </figure>
 
@@ -62,3 +65,53 @@ import GroupLabel from '../components/GroupLabel.astro';
     </div>
   </section>
 </Site>
+
+<style is:global>
+  .figure-media { position: relative; overflow: hidden; line-height: 0; }
+  .skulls { position: absolute; inset: 0; pointer-events: none; }
+  .skulls .sk { position: absolute; opacity: 0; }
+  .skulls .sk svg { display: block; width: 100%; height: 100%; }
+  @keyframes skFade {
+    0% { opacity: 0; transform: scale(0.9); }
+    45% { opacity: var(--pk, 0.3); transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.03); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skulls { display: none; }
+  }
+</style>
+
+<script>
+  const layer = document.getElementById('skulls');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (layer && !reduce) {
+    const SVG =
+      '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M10 1.6c-3.6 0-6 2.6-6 6 0 2 .9 3.2 1.7 4 .3.3.5.7.5 1.1v1.1c0 .5.4.9.9.9h.3v-1.6h1v1.6h1v-1.6h1v1.6h.3c.5 0 .9-.4.9-.9v-1.1c0-.4.2-.8.5-1.1.8-.8 1.7-2 1.7-4 0-3.4-2.4-6-6-6z" fill="#f4f2ee"/>' +
+      '<circle cx="7.4" cy="8" r="1.5" fill="#171512"/><circle cx="12.6" cy="8" r="1.5" fill="#171512"/>' +
+      '<path d="M10 10.2l-.9 1.7h1.8z" fill="#171512"/></svg>';
+    const spawn = () => {
+      const w = layer.clientWidth, h = layer.clientHeight;
+      if (!w || !h) return;
+      const el = document.createElement('div');
+      el.className = 'sk';
+      const size = 11 + Math.random() * 11;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.left = Math.random() * (w - size) + 'px';
+      el.style.top = Math.random() * (h - size) + 'px';
+      const peak = 0.22 + Math.random() * 0.16;
+      el.style.setProperty('--pk', peak.toFixed(2));
+      const dur = 2.6 + Math.random() * 1.8;
+      el.style.animation = 'skFade ' + dur.toFixed(2) + 's ease-in-out forwards';
+      el.innerHTML = SVG;
+      layer.appendChild(el);
+      setTimeout(() => el.remove(), dur * 1000 + 80);
+    };
+    const loop = () => {
+      spawn();
+      setTimeout(loop, 1400 + Math.random() * 1600);
+    };
+    loop();
+  }
+</script>
