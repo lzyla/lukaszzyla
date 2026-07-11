@@ -4,14 +4,16 @@ import Site from '../layouts/Site.astro';
 
 <Site title="Łukasz Żyła">
   <div class="intro-block">
-    <img
-      class="portrait"
-      src="/assets/lukasz-portrait.jpg"
-      alt="Łukasz Żyła"
-      width="220"
-      height="300"
-      loading="eager"
-    />
+    <span class="portrait-wrap">
+      <img
+        class="portrait"
+        src="/assets/lukasz-portrait.jpg"
+        alt="Łukasz Żyła"
+        width="220"
+        height="300"
+        loading="eager"
+      />
+    </span>
     <div class="lede">
       <p>
         Hi! I'm a lawyer, researcher and open-data specialist working where
@@ -40,18 +42,33 @@ import Site from '../layouts/Site.astro';
     align-items: flex-start;
     gap: 34px;
   }
-  .portrait {
+  .portrait-wrap {
     flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .portrait {
+    display: block;
     width: 220px;
     height: 300px;
     object-fit: cover;
     object-position: center 28%;
     filter: grayscale(1) contrast(1.05) brightness(0.98);
-    transition: filter 0.3s ease, transform 0.3s ease;
   }
-  .portrait:hover {
-    filter: grayscale(1) contrast(1.08) brightness(1.03);
-    transform: translateY(-2px);
+  /* Minimalne przejście światła po zdjęciu — na granicy widoczności */
+  .portrait-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, 0.1) 50%, transparent 58%);
+    transform: translateX(-130%);
+    transition: transform 1s ease;
+    pointer-events: none;
+  }
+  .portrait-wrap:hover::after { transform: translateX(130%); }
+  @media (prefers-reduced-motion: reduce) {
+    .portrait-wrap::after { transition: none; }
   }
   .intro-block .lede { flex: 1 1 auto; min-width: 0; }
 
