@@ -71,10 +71,14 @@ import GroupLabel from '../components/GroupLabel.astro';
   .skulls { position: absolute; inset: 0; pointer-events: none; }
   .skulls .sk { position: absolute; opacity: 0; }
   .skulls .sk svg { display: block; width: 100%; height: 100%; }
-  @keyframes skFade {
-    0% { opacity: 0; transform: scale(0.9); }
-    45% { opacity: var(--pk, 0.3); transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.03); }
+  @keyframes skFlicker {
+    0%, 100% { opacity: 0; }
+    12% { opacity: var(--pk, 0.4); }
+    22% { opacity: calc(var(--pk, 0.4) * 0.25); }
+    38% { opacity: var(--pk, 0.4); }
+    55% { opacity: calc(var(--pk, 0.4) * 0.5); }
+    72% { opacity: var(--pk, 0.4); }
+    88% { opacity: calc(var(--pk, 0.4) * 0.2); }
   }
   @media (prefers-reduced-motion: reduce) {
     .skulls { display: none; }
@@ -90,27 +94,39 @@ import GroupLabel from '../components/GroupLabel.astro';
       '<path d="M10 1.6c-3.6 0-6 2.6-6 6 0 2 .9 3.2 1.7 4 .3.3.5.7.5 1.1v1.1c0 .5.4.9.9.9h.3v-1.6h1v1.6h1v-1.6h1v1.6h.3c.5 0 .9-.4.9-.9v-1.1c0-.4.2-.8.5-1.1.8-.8 1.7-2 1.7-4 0-3.4-2.4-6-6-6z" fill="#f4f2ee"/>' +
       '<circle cx="7.4" cy="8" r="1.5" fill="#171512"/><circle cx="12.6" cy="8" r="1.5" fill="#171512"/>' +
       '<path d="M10 10.2l-.9 1.7h1.8z" fill="#171512"/></svg>';
+    // Losowa pozycja tylko na ścianach (pomija postać/krzesło w centrum-dole i podłogę)
+    const wallPos = () => {
+      for (let i = 0; i < 10; i++) {
+        const rx = Math.random();
+        const ry = 0.04 + Math.random() * 0.60;
+        if (rx > 0.36 && rx < 0.64 && ry > 0.38) continue;
+        return [rx, ry];
+      }
+      return [Math.random(), 0.05 + Math.random() * 0.28];
+    };
     const spawn = () => {
       const w = layer.clientWidth, h = layer.clientHeight;
-      if (!w || !h) return;
+      if (!w || !h || layer.childElementCount > 16) return;
       const el = document.createElement('div');
       el.className = 'sk';
-      const size = 11 + Math.random() * 11;
+      const size = 9 + Math.random() * 9;
+      const [rx, ry] = wallPos();
       el.style.width = size + 'px';
       el.style.height = size + 'px';
-      el.style.left = Math.random() * (w - size) + 'px';
-      el.style.top = Math.random() * (h - size) + 'px';
-      const peak = 0.22 + Math.random() * 0.16;
+      el.style.left = rx * (w - size) + 'px';
+      el.style.top = ry * (h - size) + 'px';
+      const peak = 0.28 + Math.random() * 0.22;
       el.style.setProperty('--pk', peak.toFixed(2));
-      const dur = 2.6 + Math.random() * 1.8;
-      el.style.animation = 'skFade ' + dur.toFixed(2) + 's ease-in-out forwards';
+      const dur = 1.1 + Math.random() * 1.3;
+      el.style.animation = 'skFlicker ' + dur.toFixed(2) + 's linear forwards';
       el.innerHTML = SVG;
       layer.appendChild(el);
-      setTimeout(() => el.remove(), dur * 1000 + 80);
+      setTimeout(() => el.remove(), dur * 1000 + 60);
     };
     const loop = () => {
       spawn();
-      setTimeout(loop, 1400 + Math.random() * 1600);
+      if (Math.random() < 0.5) spawn();
+      setTimeout(loop, 260 + Math.random() * 520);
     };
     loop();
   }
