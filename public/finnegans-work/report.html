@@ -1,4 +1,4 @@
-<!doctype html><html lang='pl'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Finnegans Work — text mining</title></head><body>
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Finnegans Work — report</title></head><body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -32,39 +32,39 @@
   </nav>
 </div>
 <div class="lz-sub"><b>Finnegans Work</b> —
-  <a href="fonologia.html">phonology</a> ·
-  <a href="report.html" aria-current="page">raport</a> ·
-  <a href="lingua.html">języki</a> ·
-  <a href="muzyka.html">muzyka</a> ·
-  <a href="fonemy.html">fonemy</a> ·
-  <a href="prosta.html">tekst</a> ·
-  <a href="dlugie.html">długie słowa</a> ·
-  <a href="rzeki.html">rzeki</a>
+  <a href="phonology.html">phonology</a> ·
+  <a href="report.html" aria-current="page">report</a> ·
+  <a href="languages.html">languages</a> ·
+  <a href="music.html">music</a> ·
+  <a href="phonemes.html">phonemes</a> ·
+  <a href="plain.html">plain text</a> ·
+  <a href="longwords.html">long words</a> ·
+  <a href="rivers.html">rivers</a>
 </div>
 <div class="wrap">
 <header>
   <h1>Finnegans Work</h1>
-  <p class="sub">Text mining <em>Finnegans Wake</em> Jamesa Joyce'a &mdash; raport automatyczny</p>
+  <p class="sub">Text mining James Joyce's <em>Finnegans Wake</em> &mdash; the numbers I found</p>
 </header>
 
 <section>
-  <h2>Przegląd</h2>
-  <div class="cards"><div class="card"><div class="cval">219,191</div><div class="clabel">Słowa (tokeny)</div></div>
-<div class="card"><div class="cval">57,718</div><div class="clabel">Unikatowe formy</div></div>
+  <h2>Overview</h2>
+  <div class="cards"><div class="card"><div class="cval">219,191</div><div class="clabel">Words (tokens)</div></div>
+<div class="card"><div class="cval">57,718</div><div class="clabel">Distinct forms</div></div>
 <div class="card"><div class="cval">0.2633</div><div class="clabel">Type-Token Ratio</div></div>
 <div class="card"><div class="cval">45,870</div><div class="clabel">Hapax legomena</div></div>
-<div class="card"><div class="cval">79.5%</div><div class="clabel">Hapax % typów</div></div>
-<div class="card"><div class="cval">4.71</div><div class="clabel">Śr. długość słowa</div></div></div>
-  <p class="note">Zdań (wg . ! ?): <b>15,175</b> &middot;
-     akapitów: <b>2,252</b> &middot;
-     znaków: <b>1,296,309</b>.
-     Hapax stanowią <b>79.5%</b> wszystkich form —
-     miara skrajnej różnorodności leksykalnej powieści.</p>
+<div class="card"><div class="cval">79.5%</div><div class="clabel">Hapax % of types</div></div>
+<div class="card"><div class="cval">4.71</div><div class="clabel">Mean word length</div></div></div>
+  <p class="note">Sentences (by . ! ?): <b>15,175</b> &middot;
+     paragraphs: <b>2,252</b> &middot;
+     characters: <b>1,296,309</b>.
+     Hapax legomena make up <b>79.5%</b> of all
+     forms — a measure of the novel's extreme lexical diversity.</p>
 </section>
 
 <section>
-  <h2>Neologizmy / portmanteau <span class="tag">słowa spoza słownika</span></h2>
-  <p class="note">30,498 unikatowych form spoza słownika (52.8% wszystkich form), 32,755 wystąpień (14.9% tekstu).</p>
+  <h2>Coinages / portmanteaux <span class="tag">words outside the dictionary</span></h2>
+  <p class="note">30,498 distinct forms outside the dictionary (52.8% of all forms), 32,755 occurrences (14.9% of the text).</p>
   <table><tr><td class="lbl">shaun</td><td class="num">46</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
 <tr><td class="lbl">willingdone</td><td class="num">24</td><td class="barcell"><span class="bar" style="width:52.2%"></span></td></tr>
 <tr><td class="lbl">taff</td><td class="num">20</td><td class="barcell"><span class="bar" style="width:43.5%"></span></td></tr>
@@ -93,28 +93,28 @@
 </section>
 
 <section>
-  <h2>Thunderwords <span class="tag">stugłoskowe słowa-grzmoty</span></h2>
-  <p class="note">Dziesięć długich słów Joyce'a symbolizujących grzmot upadku.
-     Wykryte jako ciągi liter &ge; 30 znaków (po scaleniu dywizów z łamania wierszy):</p>
-  <ol class="thunder"><li><span class="tw">klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot</span> <span class="twlen">100 liter</span></li>
-<li><span class="tw">Lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk</span> <span class="twlen">100 liter</span></li>
-<li><span class="tw">Bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup</span> <span class="twlen">100 liter</span></li>
-<li><span class="tw">husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract</span> <span class="twlen">100 liter</span></li>
-<li><span class="tw">bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur</span> <span class="twlen">97 liter</span></li>
-<li><span class="tw">Pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd</span> <span class="twlen">92 liter</span></li>
-<li><span class="tw">Thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind</span> <span class="twlen">89 liter</span></li>
-<li><span class="tw">Ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin</span> <span class="twlen">75 liter</span></li>
-<li><span class="tw">Bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata</span> <span class="twlen">73 liter</span></li>
-<li><span class="tw">Perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth</span> <span class="twlen">57 liter</span></li>
-<li><span class="tw">lewdningbluebolteredallucktruckalltraumconductor</span> <span class="twlen">48 liter</span></li>
-<li><span class="tw">rumathunaradidillifaititillibumullunukkunun</span> <span class="twlen">43 liter</span></li></ol>
+  <h2>Thunderwords <span class="tag">hundred-letter thunderclaps</span></h2>
+  <p class="note">Joyce's ten long words of the fall. Detected as letter
+     runs &ge; 30 characters (after merging line-break hyphens):</p>
+  <ol class="thunder"><li><span class="tw">klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot</span> <span class="twlen">100 letters</span></li>
+<li><span class="tw">Lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk</span> <span class="twlen">100 letters</span></li>
+<li><span class="tw">Bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup</span> <span class="twlen">100 letters</span></li>
+<li><span class="tw">husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract</span> <span class="twlen">100 letters</span></li>
+<li><span class="tw">bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur</span> <span class="twlen">97 letters</span></li>
+<li><span class="tw">Pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd</span> <span class="twlen">92 letters</span></li>
+<li><span class="tw">Thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind</span> <span class="twlen">89 letters</span></li>
+<li><span class="tw">Ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin</span> <span class="twlen">75 letters</span></li>
+<li><span class="tw">Bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata</span> <span class="twlen">73 letters</span></li>
+<li><span class="tw">Perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth</span> <span class="twlen">57 letters</span></li>
+<li><span class="tw">lewdningbluebolteredallucktruckalltraumconductor</span> <span class="twlen">48 letters</span></li>
+<li><span class="tw">rumathunaradidillifaititillibumullunukkunun</span> <span class="twlen">43 letters</span></li></ol>
 </section>
 
 <section>
-  <h2>Najczęstsze słowa znaczące <span class="tag">bez wyrazów funkcyjnych</span></h2>
-  <p class="note">Ranking po odfiltrowaniu ~160 wyrazów funkcyjnych
-     (the, and, of…), które z definicji dominują każdy tekst angielski —
-     ich rozkład widać na wykresie Zipfa poniżej.</p>
+  <h2>Most frequent content words <span class="tag">function words excluded</span></h2>
+  <p class="note">Ranked after filtering ~160 function words (the, and,
+     of…), which by definition dominate any English text — their
+     distribution shows in the Zipf plot below.</p>
   <table><tr><td class="lbl">like</td><td class="num">559</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
 <tr><td class="lbl">old</td><td class="num">463</td><td class="barcell"><span class="bar" style="width:82.8%"></span></td></tr>
 <tr><td class="lbl">time</td><td class="num">265</td><td class="barcell"><span class="bar" style="width:47.4%"></span></td></tr>
@@ -143,29 +143,29 @@
 </section>
 
 <section>
-  <h2>Rozkład Zipfa <span class="tag">częstość vs. ranga (log-log)</span></h2>
+  <h2>Zipf distribution <span class="tag">frequency vs rank (log-log)</span></h2>
   <svg viewBox="0 0 680 320" class="zipf" role="img">
   <line x1="48" y1="272" x2="632" y2="272" class="axis"/>
   <line x1="48" y1="48" x2="48" y2="272" class="axis"/>
   <polyline points="48.0,48.0 106.6,59.6 140.9,65.4 184.1,80.8 242.7,110.3 301.3,124.0 378.7,156.2 437.3,187.5 495.9,217.2 573.4,250.2 632.0,272.0" class="zline"/>
-  <circle cx="48.0" cy="48.0" r="4" class="dot"><title>ranga 1: "the" &times; 12018</title></circle>
-<circle cx="106.6" cy="59.6" r="4" class="dot"><title>ranga 2: "and" &times; 8479</title></circle>
-<circle cx="140.9" cy="65.4" r="4" class="dot"><title>ranga 3: "of" &times; 7106</title></circle>
-<circle cx="184.1" cy="80.8" r="4" class="dot"><title>ranga 5: "to" &times; 4473</title></circle>
-<circle cx="242.7" cy="110.3" r="4" class="dot"><title>ranga 10: "he" &times; 1834</title></circle>
-<circle cx="301.3" cy="124.0" r="4" class="dot"><title>ranga 20: "her" &times; 1214</title></circle>
-<circle cx="378.7" cy="156.2" r="4" class="dot"><title>ranga 50: "now" &times; 460</title></circle>
-<circle cx="437.3" cy="187.5" r="4" class="dot"><title>ranga 100: "am" &times; 179</title></circle>
-<circle cx="495.9" cy="217.2" r="4" class="dot"><title>ranga 200: "call" &times; 73</title></circle>
-<circle cx="573.4" cy="250.2" r="4" class="dot"><title>ranga 500: "sight" &times; 27</title></circle>
-<circle cx="632.0" cy="272.0" r="4" class="dot"><title>ranga 1000: "jinnies" &times; 14</title></circle>
-  <text x="340.0" y="310" class="axlbl">log10(ranga)</text>
-  <text x="14" y="160.0" class="axlbl" transform="rotate(-90 14 160.0)">log10(częstość)</text>
+  <circle cx="48.0" cy="48.0" r="4" class="dot"><title>rank 1: "the" &times; 12018</title></circle>
+<circle cx="106.6" cy="59.6" r="4" class="dot"><title>rank 2: "and" &times; 8479</title></circle>
+<circle cx="140.9" cy="65.4" r="4" class="dot"><title>rank 3: "of" &times; 7106</title></circle>
+<circle cx="184.1" cy="80.8" r="4" class="dot"><title>rank 5: "to" &times; 4473</title></circle>
+<circle cx="242.7" cy="110.3" r="4" class="dot"><title>rank 10: "he" &times; 1834</title></circle>
+<circle cx="301.3" cy="124.0" r="4" class="dot"><title>rank 20: "her" &times; 1214</title></circle>
+<circle cx="378.7" cy="156.2" r="4" class="dot"><title>rank 50: "now" &times; 460</title></circle>
+<circle cx="437.3" cy="187.5" r="4" class="dot"><title>rank 100: "am" &times; 179</title></circle>
+<circle cx="495.9" cy="217.2" r="4" class="dot"><title>rank 200: "call" &times; 73</title></circle>
+<circle cx="573.4" cy="250.2" r="4" class="dot"><title>rank 500: "sight" &times; 27</title></circle>
+<circle cx="632.0" cy="272.0" r="4" class="dot"><title>rank 1000: "jinnies" &times; 14</title></circle>
+  <text x="340.0" y="310" class="axlbl">log10(rank)</text>
+  <text x="14" y="160.0" class="axlbl" transform="rotate(-90 14 160.0)">log10(frequency)</text>
 </svg>
 </section>
 
 <section>
-  <h2>Motywy przewodnie</h2>
+  <h2>Leitmotifs</h2>
   <table><tr><td class="lbl">dream / sleep</td><td class="num">79</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
 <tr><td class="lbl">Finnegan / Finn</td><td class="num">71</td><td class="barcell"><span class="bar" style="width:89.9%"></span></td></tr>
 <tr><td class="lbl">wake / awake</td><td class="num">51</td><td class="barcell"><span class="bar" style="width:64.6%"></span></td></tr>
@@ -179,33 +179,33 @@
 </section>
 
 <section>
-  <h2>Najdłuższe słowa</h2>
-  <table><tr><td class="lbl">bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup</td><td class="num">100 zn.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
-<tr><td class="lbl">husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract</td><td class="num">100 zn.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
-<tr><td class="lbl">klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot</td><td class="num">100 zn.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
-<tr><td class="lbl">lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk</td><td class="num">100 zn.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
-<tr><td class="lbl">bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur</td><td class="num">97 zn.</td><td class="barcell"><span class="bar" style="width:97.0%"></span></td></tr>
-<tr><td class="lbl">pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd</td><td class="num">92 zn.</td><td class="barcell"><span class="bar" style="width:92.0%"></span></td></tr>
-<tr><td class="lbl">thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind</td><td class="num">89 zn.</td><td class="barcell"><span class="bar" style="width:89.0%"></span></td></tr>
-<tr><td class="lbl">ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin</td><td class="num">75 zn.</td><td class="barcell"><span class="bar" style="width:75.0%"></span></td></tr>
-<tr><td class="lbl">bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata</td><td class="num">73 zn.</td><td class="barcell"><span class="bar" style="width:73.0%"></span></td></tr>
-<tr><td class="lbl">perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth</td><td class="num">57 zn.</td><td class="barcell"><span class="bar" style="width:57.0%"></span></td></tr>
-<tr><td class="lbl">lewdningbluebolteredallucktruckalltraumconductor</td><td class="num">48 zn.</td><td class="barcell"><span class="bar" style="width:48.0%"></span></td></tr>
-<tr><td class="lbl">rumathunaradidillifaititillibumullunukkunun</td><td class="num">43 zn.</td><td class="barcell"><span class="bar" style="width:43.0%"></span></td></tr>
-<tr><td class="lbl">neverheedthemhorseluggarsandlisteltomine</td><td class="num">40 zn.</td><td class="barcell"><span class="bar" style="width:40.0%"></span></td></tr>
-<tr><td class="lbl">cellelleneteutoslavzendlatinsoundscript</td><td class="num">39 zn.</td><td class="barcell"><span class="bar" style="width:39.0%"></span></td></tr>
-<tr><td class="lbl">ricqueracqbrimbillyjicqueyjocqjolicass</td><td class="num">38 zn.</td><td class="barcell"><span class="bar" style="width:38.0%"></span></td></tr>
-<tr><td class="lbl">dullakeykongsbyogblagroggerswagginline</td><td class="num">38 zn.</td><td class="barcell"><span class="bar" style="width:38.0%"></span></td></tr>
-<tr><td class="lbl">youknowwhati&#x27;vecomeaboutisawyouract</td><td class="num">35 zn.</td><td class="barcell"><span class="bar" style="width:35.0%"></span></td></tr>
-<tr><td class="lbl">ishallassoboundbewilsothoutoosezit</td><td class="num">34 zn.</td><td class="barcell"><span class="bar" style="width:34.0%"></span></td></tr>
-<tr><td class="lbl">polthergeistkotzdondherhoploits</td><td class="num">31 zn.</td><td class="barcell"><span class="bar" style="width:31.0%"></span></td></tr>
-<tr><td class="lbl">semperexcommunicambiambisumers</td><td class="num">30 zn.</td><td class="barcell"><span class="bar" style="width:30.0%"></span></td></tr></table>
+  <h2>Longest words</h2>
+  <table><tr><td class="lbl">lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk</td><td class="num">100 ch.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
+<tr><td class="lbl">klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot</td><td class="num">100 ch.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
+<tr><td class="lbl">bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup</td><td class="num">100 ch.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
+<tr><td class="lbl">husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract</td><td class="num">100 ch.</td><td class="barcell"><span class="bar" style="width:100.0%"></span></td></tr>
+<tr><td class="lbl">bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur</td><td class="num">97 ch.</td><td class="barcell"><span class="bar" style="width:97.0%"></span></td></tr>
+<tr><td class="lbl">pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd</td><td class="num">92 ch.</td><td class="barcell"><span class="bar" style="width:92.0%"></span></td></tr>
+<tr><td class="lbl">thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind</td><td class="num">89 ch.</td><td class="barcell"><span class="bar" style="width:89.0%"></span></td></tr>
+<tr><td class="lbl">ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin</td><td class="num">75 ch.</td><td class="barcell"><span class="bar" style="width:75.0%"></span></td></tr>
+<tr><td class="lbl">bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata</td><td class="num">73 ch.</td><td class="barcell"><span class="bar" style="width:73.0%"></span></td></tr>
+<tr><td class="lbl">perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth</td><td class="num">57 ch.</td><td class="barcell"><span class="bar" style="width:57.0%"></span></td></tr>
+<tr><td class="lbl">lewdningbluebolteredallucktruckalltraumconductor</td><td class="num">48 ch.</td><td class="barcell"><span class="bar" style="width:48.0%"></span></td></tr>
+<tr><td class="lbl">rumathunaradidillifaititillibumullunukkunun</td><td class="num">43 ch.</td><td class="barcell"><span class="bar" style="width:43.0%"></span></td></tr>
+<tr><td class="lbl">neverheedthemhorseluggarsandlisteltomine</td><td class="num">40 ch.</td><td class="barcell"><span class="bar" style="width:40.0%"></span></td></tr>
+<tr><td class="lbl">cellelleneteutoslavzendlatinsoundscript</td><td class="num">39 ch.</td><td class="barcell"><span class="bar" style="width:39.0%"></span></td></tr>
+<tr><td class="lbl">ricqueracqbrimbillyjicqueyjocqjolicass</td><td class="num">38 ch.</td><td class="barcell"><span class="bar" style="width:38.0%"></span></td></tr>
+<tr><td class="lbl">dullakeykongsbyogblagroggerswagginline</td><td class="num">38 ch.</td><td class="barcell"><span class="bar" style="width:38.0%"></span></td></tr>
+<tr><td class="lbl">youknowwhati&#x27;vecomeaboutisawyouract</td><td class="num">35 ch.</td><td class="barcell"><span class="bar" style="width:35.0%"></span></td></tr>
+<tr><td class="lbl">ishallassoboundbewilsothoutoosezit</td><td class="num">34 ch.</td><td class="barcell"><span class="bar" style="width:34.0%"></span></td></tr>
+<tr><td class="lbl">polthergeistkotzdondherhoploits</td><td class="num">31 ch.</td><td class="barcell"><span class="bar" style="width:31.0%"></span></td></tr>
+<tr><td class="lbl">semperexcommunicambiambisumers</td><td class="num">30 ch.</td><td class="barcell"><span class="bar" style="width:30.0%"></span></td></tr></table>
 </section>
 
 <section>
-  <h2>Podział na Księgi</h2>
+  <h2>By Book</h2>
   <table class="grid">
-    <tr><th>Księga</th><th>Słowa</th><th>Formy</th><th>TTR</th><th>Hapax</th><th>Hapax %</th></tr>
+    <tr><th>Book</th><th>Words</th><th>Forms</th><th>TTR</th><th>Hapax</th><th>Hapax %</th></tr>
     <tr><td class="lbl">Book I</td><td class="num">77,466</td><td class="num">24,189</td><td class="num">0.3123</td><td class="num">19,540</td><td class="num">80.8%</td></tr>
 <tr><td class="lbl">Book II</td><td class="num">62,064</td><td class="num">21,889</td><td class="num">0.3527</td><td class="num">18,272</td><td class="num">83.5%</td></tr>
 <tr><td class="lbl">Book III</td><td class="num">66,896</td><td class="num">21,204</td><td class="num">0.3170</td><td class="num">17,171</td><td class="num">81.0%</td></tr>
@@ -214,9 +214,9 @@
 </section>
 
 <footer>
-  <p>Źródło tekstu: korpus Joyce'a (GitHub). Wygenerowano skryptem
-     <code>run.py</code>. Neologizmy szacowane względem
-     <code>/usr/share/dict/words</code> — heurystyka, nie klasyfikacja filologiczna.</p>
+  <p>Source text: a Joyce corpus (GitHub). Generated by my
+     <code>run.py</code> script. Coinages estimated against an English
+     wordlist — a heuristic, not a philological classification.</p>
 </footer>
 </div>
 <style>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finnegans Work — plain-text version</title>
+<style>
+/* Deliberately almost no styling: just a readable column width. */
+body{max-width:75ch;margin:2em auto;padding:0 1em}
+svg{width:100%;height:auto;display:block}
+#readout{white-space:pre-wrap}
+</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+.lz-mast{max-width:80ch;margin:1.6em auto .4em;padding:0 1em;
+ display:flex;flex-wrap:wrap;align-items:baseline;gap:.9em 1.6em}
+.lz-mast .lz-name{font-family:'Newsreader','Iowan Old Style',Georgia,serif;
+ font-size:22px;font-weight:500;color:#1b1815;text-decoration:none}
+.lz-mast nav{display:flex;flex-wrap:wrap;gap:.2em 1.15em;margin-left:auto}
+.lz-mast nav a,.lz-sub a{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+ font-size:14px;color:#6b6b6b;text-decoration:none;
+ background-image:linear-gradient(#d86a2c,#d86a2c);background-repeat:no-repeat;
+ background-position:0 100%;background-size:0% 1.5px;
+ transition:background-size .3s cubic-bezier(.22,.8,.24,1),color .2s}
+.lz-mast nav a:hover,.lz-sub a:hover{color:#1b1815;background-size:100% 1.5px}
+.lz-sub{max-width:80ch;margin:0 auto 1.2em;padding:.5em 1em .9em;
+ border-bottom:1px solid #e5e5e5;font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+ font-size:13px;color:#8a8a8a}
+.lz-sub b{color:#1b1815;font-weight:500}
+.lz-sub a[aria-current]{color:#1b1815}
+</style>
+<div class="lz-mast">
+  <a class="lz-name" href="https://lukaszzyla.com/">Łukasz Żyła</a>
+  <nav aria-label="Sections">
+    <a href="https://lukaszzyla.com/annotations/">1&nbsp;Annotations</a>
+    <a href="https://lukaszzyla.com/projects/">2&nbsp;Projects</a>
+    <a href="https://lukaszzyla.com/publications/">3&nbsp;Publications</a>
+    <a href="https://lukaszzyla.com/workshops/">4&nbsp;Workshops</a>
+    <a href="https://lukaszzyla.com/sounds/">5&nbsp;Sounds</a>
+    <a href="https://lukaszzyla.com/bio/">6&nbsp;Bio</a>
+  </nav>
+</div>
+<div class="lz-sub"><b>Finnegans Work</b> —
+  <a href="phonology.html">phonology</a> ·
+  <a href="report.html">report</a> ·
+  <a href="languages.html">languages</a> ·
+  <a href="music.html">music</a> ·
+  <a href="phonemes.html">phonemes</a> ·
+  <a href="plain.html" aria-current="page">plain text</a> ·
+  <a href="longwords.html">long words</a> ·
+  <a href="rivers.html">rivers</a>
+</div>
+
+<h1>Finnegans Work — results (plain-text version)</h1>
+<p>Text mining James Joyce's <i>Finnegans Wake</i>. All measures are
+dictionary heuristics, not philological classification.</p>
+
+
+<h2>1. Basic numbers</h2>
+<p>Words (tokens): 219,191. Distinct forms: 57,718.
+Type-Token Ratio: 0.2633. Hapax legomena (words used
+exactly once): 45,870, i.e.
+79.47% of all forms. Mean word length:
+4.71 letters.</p>
+<p>Recognised as English: 85.06% of occurrences.
+Outside all 14 dictionaries (pure coinages):
+13.6% of occurrences.</p>
+
+<h2>2. How many words from which languages</h2>
+<p>Words that fail the English dictionary test and appear on the
+frequency list of exactly one foreign language (exclusive match;
+OpenSubtitles 50k lists plus hunspell for Irish and Latin):</p>
+<ul><li>Latin: 239 forms, 286 occurrences — e.g. burrus, tunc, cincinnatus, fert, qualis, xanthos, aequal, allus, amnis, appia, balbus, bellax, christianismus, croesus</li><li>Irish: 161 forms, 205 occurrences — e.g. tarpey, dinny, meagher, connacht, noone, agus, amaid, broin, canavan, clery, comyn, domhnall, eilish, euston</li><li>German: 155 forms, 197 occurrences — e.g. fing, dumm, floh, soll, sturm, ick, kuss, weh, wohl, atem, butterbrot, erde, fahr, helf</li><li>French: 152 forms, 182 occurrences — e.g. zinzin, capt, ous, parn, perce, bawk, bref, flore, flou, forain, loue, lourde, momie, nenni</li><li>Dutch: 102 forms, 128 occurrences — e.g. hek, oom, goot, hulp, ook, bonafide, dik, fooi, jool, koorts, liggen, ogh, soort, vaal</li><li>Italian: 89 forms, 95 occurrences — e.g. mauritius, citta, colpo, equo, pance, alieni, amanti, amare, anzi, arancia, assoluta, attraente, autore, bambolina</li><li>Danish: 51 forms, 70 occurrences — e.g. pive, nolans, bedst, niver, ture, dyb, ekspedient, hvide, myre, skib, uge, begyndelse, boola, bradys</li><li>Norwegian: 55 forms, 61 occurrences — e.g. funn, futt, meesh, vike, bakk, barna, bie, bll, brawne, broadchurch, buchan, detter, drikking, elv</li><li>Swedish: 39 forms, 55 occurrences — e.g. ney, limon, furst, triss, bina, naket, skuld, sprids, tolka, andrum, apan, askan, bekant, charmig</li><li>Finnish: 43 forms, 52 occurrences — e.g. haun, orel, hugon, katu, kirjallisuus, ninan, arin, auton, hoet, ilma, isot, joshuan, kahdeksan, kaksi</li><li>Portuguese: 46 forms, 49 occurrences — e.g. adie, ihe, aham, alfaiate, amam, amem, batom, calam, contanto, cujas, cunha, encho, escusado, fartas</li><li>Polish: 34 forms, 47 occurrences — e.g. anny, ech, winny, anty, centy, chiny, chory, dym, edem, fal, grania, herbata, inny, kako</li><li>Spanish: 35 forms, 35 occurrences — e.g. abunda, amarilla, arcoiris, aun, bolsillos, calavera, capilla, cascadas, consciencia, corriendo, dese, desterrado, grabar, hermana</li></ul>
+
+<h2>3. How the languages combine (portmanteau blends)</h2>
+<p>Words outside all dictionaries that split into two dictionary parts:
+13,773 (14,332 occurrences).
+Part of speech guessed from the suffix: other 6904 (50%), noun 4335 (31%), verb 1801 (13%), adjective 527 (4%), adverb 206 (1%).</p>
+<p>Most frequent language pairs inside words:</p>
+<ul><li>English + English: 9680 words (10093 occurrences) — willingdone = willing+done; earwicker = ear+wicker; lipoleums = lip+oleums; prankquean = prank+quean</li><li>English + French: 370 words (380 occurrences) — macdougal = mac+dougal; pritchards = prit+chards; bannistars = banni+stars; catholick = catho+lick</li><li>English + Norwegian: 357 words (376 occurrences) — kiddling = kidd+ling; fortissa = fort+issa; rossies = ros+sies; tolbris = tol+bris</li><li>English + Latin: 352 words (358 occurrences) — sandhyas = sand+hyas; pelagiarist = pelagia+rist; allinoilia = allino+ilia; gregorius = gregor+ius</li><li>German + English: 338 words (339 occurrences) — camiflag = cami+flag; bourgeoismeister = bourgeois+meister; negativisticists = negativistic+ists; fornicationists = fornication+ists</li><li>English + Dutch: 326 words (335 occurrences) — glendalough = glenda+lough; chickchilds = chick+childs; clottering = clot+tering; spanglers = spang+lers</li><li>English + Italian: 315 words (328 occurrences) — balenoarch = baleno+arch; allaboy = alla+boy; hairing = hai+ring; shaunti = sha+unti</li><li>English + Swedish: 283 words (296 occurrences) — fenians = fen+ians; finglas = fin+glas; sotisfiction = sotis+fiction; glasstone = glas+stone</li><li>English + Irish: 256 words (264 occurrences) — smolking = smol+king; taytotally = tayto+tally; mullingar = mullin+gar; yearlyng = year+lyng</li><li>Danish + English: 249 words (257 occurrences) — krumlin = krum+lin; foreninst = foren+inst; fermament = ferm+ament; pukkelsen = pukkel+sen</li><li>English + Spanish: 195 words (201 occurrences) — breathings = brea+things; mamalujo = mama+lujo; beseated = bese+ated; paloola = palo+ola</li><li>English + Portuguese: 191 words (206 occurrences) — praties = pra+ties; margareena = marga+reena; remembore = remem+bore; remembored = remem+bored</li><li>English + Polish: 140 words (146 occurrences) — walhalloo = wal+halloo; semitary = semi+tary; synamite = syna+mite; plikplak = plik+plak</li><li>English + Finnish: 126 words (134 occurrences) — pepette = pep+ette; minnelisp = minne+lisp; peepette = peep+ette; garonne = garo+nne</li><li>French + Italian: 18 words (19 occurrences) — culious = culi+ous; salvatorious = salvatori+ous; arrivaliste = arriva+liste; capellisato = capelli+sato</li><li>French + Latin: 17 words (17 occurrences) — chronometrum = chrono+metrum; infirmierity = infirmier+ity; indivisibles = indi+visibles; deiectiones = deiectio+nes</li></ul>
+<p>Two foreign languages co-occurring in one sentence:</p>
+<ul><li>German + Latin: 15 sentences — e.g. „blau” and „dionysius” in one sentence</li><li>Irish + Latin: 14 sentences — e.g. „canavan” and „puritas” in one sentence</li><li>French + Latin: 10 sentences — e.g. „plaine” and „isthmon” in one sentence</li><li>German + French: 8 sentences — e.g. „isst” and „fuit” in one sentence</li><li>Irish + Italian: 7 sentences — e.g. „meagher” and „questa” in one sentence</li><li>Danish + Latin: 7 sentences — e.g. „nolans” and „cius” in one sentence</li><li>Latin + Dutch: 7 sentences — e.g. „epistola” and „nieuw” in one sentence</li><li>French + Dutch: 6 sentences — e.g. „trou” and „boobytrap” in one sentence</li><li>French + Irish: 6 sentences — e.g. „fion” and „seinn” in one sentence</li><li>Italian + Latin: 6 sentences — e.g. „questa” and „puella” in one sentence</li></ul>
+
+<h2>4. Sound patterns</h2>
+<p>Vowel share: 39.68% in English words,
+38.92% in coinages.</p>
+<p>Bigrams overrepresented in the coinages relative to the book's own
+English (how many times more frequent): yn (×9.9), yb (×9.31), ko (×7.91), lb (×6.95), ym (×6.8), ka (×6.26), rh (×5.67), eb (×5.36), eu (×4.39), oh (×4.12), iu (×3.99), yl (×3.92), ky (×3.67), lm (×3.64).</p>
+<p>Most frequent consonant clusters ≥3 letters in coinages: str (181, e.g. oystrygods), ght (179, e.g. wielderfight), rth (158, e.g. eggeberth), ngs (140, e.g. ringsome), tch (138, e.g. detch), lls (129, e.g. wallhall's), nds (118, e.g. fondseed), ttl (113, e.g. lovelittle), ngl (109, e.g. sanglorians), nch (104, e.g. ffrinch), cks (103, e.g. carhacks), thr (101, e.g. threefoiled).</p>
+<p>Alliteration: 1,791 runs of ≥3 words on the same
+letter. Longest:</p>
+<ul><li>21 words on „p”: pin puff pive piff piff puff pive poo poo puff pive pree pree puff pive pfoor pfoor puff pive pippive poopive</li><li>9 words on „h”: hicky hecky hock huges huges huges hughy hughy hughy</li><li>8 words on „t”: tilling teel tum telling toll teary turty taubling</li><li>8 words on „t”: the ten ton tonuant thunderous tenor toller the</li><li>8 words on „t”: the twenty twotoosent time thwealthy took thousands the</li><li>8 words on „t”: the tumble the toss tot the trouble the</li><li>7 words on „b”: bald black bronze brown brindled betteraved blanchemanged</li><li>7 words on „b”: boosted blasted bleating blatant bloaten blasphorus blesphorous</li></ul>
+<p>Adjacent repetitions: you you (×10), that that (×6), nin nin (×6), hee hee (×5), well well (×5), order order (×5), whoishe whoishe (×5), shee shee (×4), rain rain (×4), had had (×4).</p>
+<p>Word-internal reduplication: zinzin = zin+zin…, chinchin = chin+chin…, murmured = mur+mur…, puffpuff = puff+puff…, farfar = far+far…, himhim = him+him…, cincinnatus = cin+cin…, hohohoho = hoho+hoho…, barbar = bar+bar…, tootoo = too+too…, bimbim = bim+bim…, coocoo = coo+coo….</p>
+<p>Thunderwords (letter-based sound classes):</p>
+<ol><li>klikkaklakkaklaskaklopatzklatschabattacreppycrottygraddaghsemmihsammihnouithappluddyappladdypkonpkot (100 letters; plosives 41.0%, vowels 33.0%)</li><li>Lukkedoerendunandurraskewdylooshoofermoyportertooryzooysphalnabortansporthaokansakroidverjkapakkapuk (100 letters; plosives 24.0%, vowels 42.0%)</li><li>Bothallchoractorschumminaroundgansumuminarumdrumstrumtruminahumptadumpwaultopoofoolooderamaunsturnup (100 letters; plosives 20.0%, vowels 39.0%)</li><li>husstenhasstencaffincoffintussemtossemdamandamnacosaghcusaghhobixhatouxpeswchbechoscashlcarcarcaract (100 letters; plosives 24.0%, vowels 33.0%)</li><li>bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthur (97 letters; plosives 18.6%, vowels 35.1%)</li><li>Pappappapparrassannuaragheallachnatullaghmonganmacmacmacwhackfalltherdebblenonthedubblandadd (92 letters; plosives 30.4%, vowels 32.6%)</li><li>Thingcrooklyexineverypasturesixdixlikencehimaroundhersthemaggerbykinkinkankanwithdownmind (89 letters; plosives 23.6%, vowels 37.1%)</li><li>Ullhodturdenweirmudgaardgringnirurdrmolnirfenrirlukkilokkibaugimandodrrerin (75 letters; plosives 22.7%, vowels 36.0%)</li><li>Bladyughfoulmoecklenburgwhurawhorascortastrumpapornanennykocksapastippata (73 letters; plosives 27.4%, vowels 37.0%)</li><li>Perkodhuskurunbarggruauyagokgorlayorgromgremmitghundhurth (57 letters; plosives 28.1%, vowels 36.8%)</li></ol>
+
+<h2>5. A cross-section of the book (slider)</h2>
+<p>The book split into 100 equal windows (~2,200 words each). Move the
+slider to read the parameters at that point of the text. Vertical
+dashes mark the boundaries of Books I–IV; the thick grey line is the
+slider position.</p>
+
+<p><input type="range" id="pos" min="0" max="99" value="0" style="width:100%"></p>
+<p id="readout"></p>
+<div id="charts"></div>
+
+<script>
+const T = {"windows":[{"i":0,"neo_pct":20.45,"foreign_pct":0.958,"ttr":0.5235,"avg_len":4.89,"vowel_pct":39.09,"allit":27,"langs":{"la":4,"ga":1,"fr":4,"de":1,"it":1,"nl":0}},{"i":1,"neo_pct":18.07,"foreign_pct":0.639,"ttr":0.5162,"avg_len":4.71,"vowel_pct":38.67,"allit":32,"langs":{"la":3,"ga":2,"fr":3,"de":0,"it":1,"nl":0}},{"i":2,"neo_pct":17.57,"foreign_pct":0.913,"ttr":0.5258,"avg_len":4.59,"vowel_pct":39.91,"allit":27,"langs":{"la":3,"ga":3,"fr":5,"de":2,"it":0,"nl":2}},{"i":3,"neo_pct":12.0,"foreign_pct":0.183,"ttr":0.4715,"avg_len":4.52,"vowel_pct":39.3,"allit":22,"langs":{"la":0,"ga":3,"fr":0,"de":1,"it":0,"nl":0}},{"i":4,"neo_pct":10.63,"foreign_pct":0.411,"ttr":0.5408,"avg_len":4.84,"vowel_pct":39.26,"allit":14,"langs":{"la":2,"ga":2,"fr":2,"de":3,"it":0,"nl":0}},{"i":5,"neo_pct":11.91,"foreign_pct":0.365,"ttr":0.5395,"avg_len":4.82,"vowel_pct":39.27,"allit":13,"langs":{"la":3,"ga":0,"fr":1,"de":0,"it":1,"nl":1}},{"i":6,"neo_pct":10.77,"foreign_pct":0.639,"ttr":0.5299,"avg_len":4.77,"vowel_pct":38.83,"allit":14,"langs":{"la":1,"ga":6,"fr":2,"de":1,"it":0,"nl":1}},{"i":7,"neo_pct":11.78,"foreign_pct":0.548,"ttr":0.5377,"avg_len":4.78,"vowel_pct":39.11,"allit":15,"langs":{"la":2,"ga":3,"fr":1,"de":2,"it":1,"nl":0}},{"i":8,"neo_pct":15.84,"foreign_pct":0.502,"ttr":0.5723,"avg_len":4.95,"vowel_pct":39.77,"allit":31,"langs":{"la":2,"ga":1,"fr":2,"de":1,"it":1,"nl":0}},{"i":9,"neo_pct":13.51,"foreign_pct":0.685,"ttr":0.5322,"avg_len":4.76,"vowel_pct":39.1,"allit":13,"langs":{"la":3,"ga":4,"fr":4,"de":0,"it":2,"nl":1}},{"i":10,"neo_pct":10.18,"foreign_pct":0.274,"ttr":0.5139,"avg_len":4.59,"vowel_pct":39.43,"allit":14,"langs":{"la":1,"ga":1,"fr":0,"de":2,"it":1,"nl":0}},{"i":11,"neo_pct":14.1,"foreign_pct":0.685,"ttr":0.5618,"avg_len":4.89,"vowel_pct":38.98,"allit":14,"langs":{"la":2,"ga":2,"fr":1,"de":2,"it":0,"nl":4}},{"i":12,"neo_pct":11.64,"foreign_pct":0.73,"ttr":0.5354,"avg_len":4.87,"vowel_pct":39.14,"allit":22,"langs":{"la":2,"ga":6,"fr":1,"de":1,"it":0,"nl":5}},{"i":13,"neo_pct":12.05,"foreign_pct":0.183,"ttr":0.5189,"avg_len":4.82,"vowel_pct":39.09,"allit":23,"langs":{"la":0,"ga":2,"fr":0,"de":1,"it":0,"nl":0}},{"i":14,"neo_pct":13.6,"foreign_pct":0.685,"ttr":0.5043,"avg_len":4.67,"vowel_pct":38.86,"allit":29,"langs":{"la":3,"ga":3,"fr":0,"de":0,"it":2,"nl":1}},{"i":15,"neo_pct":13.01,"foreign_pct":0.685,"ttr":0.5541,"avg_len":4.81,"vowel_pct":39.04,"allit":30,"langs":{"la":3,"ga":3,"fr":2,"de":3,"it":2,"nl":0}},{"i":16,"neo_pct":13.78,"foreign_pct":0.685,"ttr":0.5349,"avg_len":4.61,"vowel_pct":39.5,"allit":22,"langs":{"la":0,"ga":1,"fr":4,"de":1,"it":1,"nl":3}},{"i":17,"neo_pct":9.13,"foreign_pct":0.456,"ttr":0.4993,"avg_len":4.79,"vowel_pct":40.13,"allit":26,"langs":{"la":0,"ga":3,"fr":0,"de":0,"it":0,"nl":4}},{"i":18,"neo_pct":9.54,"foreign_pct":0.411,"ttr":0.4975,"avg_len":4.63,"vowel_pct":40.14,"allit":20,"langs":{"la":2,"ga":0,"fr":1,"de":1,"it":0,"nl":1}},{"i":19,"neo_pct":8.9,"foreign_pct":0.502,"ttr":0.5395,"avg_len":4.9,"vowel_pct":38.94,"allit":23,"langs":{"la":3,"ga":1,"fr":0,"de":0,"it":0,"nl":2}},{"i":20,"neo_pct":11.78,"foreign_pct":0.685,"ttr":0.5513,"avg_len":4.66,"vowel_pct":38.72,"allit":21,"langs":{"la":3,"ga":5,"fr":1,"de":3,"it":0,"nl":1}},{"i":21,"neo_pct":12.37,"foreign_pct":0.456,"ttr":0.5582,"avg_len":4.76,"vowel_pct":38.91,"allit":17,"langs":{"la":4,"ga":2,"fr":1,"de":1,"it":1,"nl":0}},{"i":22,"neo_pct":13.6,"foreign_pct":0.593,"ttr":0.571,"avg_len":4.75,"vowel_pct":38.68,"allit":24,"langs":{"la":3,"ga":2,"fr":1,"de":2,"it":0,"nl":2}},{"i":23,"neo_pct":9.08,"foreign_pct":0.593,"ttr":0.4806,"avg_len":4.36,"vowel_pct":40.85,"allit":15,"langs":{"la":1,"ga":3,"fr":3,"de":1,"it":2,"nl":0}},{"i":24,"neo_pct":12.05,"foreign_pct":1.004,"ttr":0.4916,"avg_len":4.66,"vowel_pct":40.58,"allit":19,"langs":{"la":6,"ga":1,"fr":1,"de":4,"it":3,"nl":2}},{"i":25,"neo_pct":14.24,"foreign_pct":0.867,"ttr":0.4715,"avg_len":4.64,"vowel_pct":40.21,"allit":16,"langs":{"la":7,"ga":0,"fr":5,"de":3,"it":0,"nl":1}},{"i":26,"neo_pct":10.82,"foreign_pct":1.232,"ttr":0.4783,"avg_len":4.48,"vowel_pct":40.83,"allit":10,"langs":{"la":13,"ga":0,"fr":2,"de":6,"it":2,"nl":0}},{"i":27,"neo_pct":9.27,"foreign_pct":0.548,"ttr":0.5034,"avg_len":4.53,"vowel_pct":39.36,"allit":22,"langs":{"la":6,"ga":0,"fr":1,"de":1,"it":2,"nl":1}},{"i":28,"neo_pct":10.68,"foreign_pct":0.867,"ttr":0.5459,"avg_len":4.85,"vowel_pct":39.34,"allit":9,"langs":{"la":2,"ga":1,"fr":9,"de":3,"it":1,"nl":2}},{"i":29,"neo_pct":12.55,"foreign_pct":0.73,"ttr":0.5801,"avg_len":5.01,"vowel_pct":39.19,"allit":17,"langs":{"la":1,"ga":1,"fr":1,"de":0,"it":4,"nl":1}},{"i":30,"neo_pct":11.46,"foreign_pct":1.095,"ttr":0.5299,"avg_len":4.77,"vowel_pct":40.46,"allit":15,"langs":{"la":17,"ga":0,"fr":0,"de":2,"it":2,"nl":1}},{"i":31,"neo_pct":9.04,"foreign_pct":0.73,"ttr":0.487,"avg_len":4.48,"vowel_pct":40.63,"allit":17,"langs":{"la":4,"ga":6,"fr":1,"de":2,"it":0,"nl":0}},{"i":32,"neo_pct":13.42,"foreign_pct":0.867,"ttr":0.5025,"avg_len":4.28,"vowel_pct":39.22,"allit":22,"langs":{"la":0,"ga":2,"fr":1,"de":2,"it":1,"nl":5}},{"i":33,"neo_pct":13.33,"foreign_pct":0.822,"ttr":0.5126,"avg_len":4.49,"vowel_pct":39.34,"allit":26,"langs":{"la":2,"ga":2,"fr":3,"de":2,"it":2,"nl":2}},{"i":34,"neo_pct":12.37,"foreign_pct":1.324,"ttr":0.5541,"avg_len":4.52,"vowel_pct":39.71,"allit":16,"langs":{"la":4,"ga":6,"fr":4,"de":1,"it":5,"nl":1}},{"i":35,"neo_pct":14.06,"foreign_pct":0.822,"ttr":0.5655,"avg_len":4.86,"vowel_pct":38.78,"allit":17,"langs":{"la":5,"ga":2,"fr":4,"de":2,"it":0,"nl":1}},{"i":36,"neo_pct":15.34,"foreign_pct":0.73,"ttr":0.5281,"avg_len":4.63,"vowel_pct":39.04,"allit":28,"langs":{"la":1,"ga":4,"fr":3,"de":4,"it":3,"nl":0}},{"i":37,"neo_pct":18.07,"foreign_pct":0.822,"ttr":0.5527,"avg_len":4.76,"vowel_pct":39.9,"allit":24,"langs":{"la":11,"ga":1,"fr":2,"de":2,"it":0,"nl":0}},{"i":38,"neo_pct":18.03,"foreign_pct":0.639,"ttr":0.5367,"avg_len":4.84,"vowel_pct":40.12,"allit":21,"langs":{"la":2,"ga":1,"fr":3,"de":3,"it":1,"nl":0}},{"i":39,"neo_pct":17.98,"foreign_pct":0.411,"ttr":0.5737,"avg_len":4.81,"vowel_pct":38.56,"allit":21,"langs":{"la":3,"ga":0,"fr":0,"de":1,"it":0,"nl":2}},{"i":40,"neo_pct":9.95,"foreign_pct":0.685,"ttr":0.508,"avg_len":4.5,"vowel_pct":39.67,"allit":24,"langs":{"la":2,"ga":3,"fr":1,"de":4,"it":0,"nl":3}},{"i":41,"neo_pct":15.61,"foreign_pct":0.822,"ttr":0.5486,"avg_len":4.83,"vowel_pct":40.03,"allit":34,"langs":{"la":4,"ga":1,"fr":0,"de":4,"it":0,"nl":2}},{"i":42,"neo_pct":14.74,"foreign_pct":0.867,"ttr":0.5746,"avg_len":4.88,"vowel_pct":39.58,"allit":41,"langs":{"la":4,"ga":3,"fr":2,"de":3,"it":1,"nl":0}},{"i":43,"neo_pct":11.46,"foreign_pct":0.776,"ttr":0.5559,"avg_len":4.64,"vowel_pct":39.52,"allit":29,"langs":{"la":2,"ga":5,"fr":2,"de":4,"it":1,"nl":0}},{"i":44,"neo_pct":13.19,"foreign_pct":0.776,"ttr":0.5609,"avg_len":4.64,"vowel_pct":39.2,"allit":17,"langs":{"la":3,"ga":0,"fr":8,"de":1,"it":2,"nl":0}},{"i":45,"neo_pct":18.03,"foreign_pct":1.78,"ttr":0.5764,"avg_len":4.84,"vowel_pct":39.3,"allit":26,"langs":{"la":9,"ga":1,"fr":6,"de":2,"it":1,"nl":0}},{"i":46,"neo_pct":14.51,"foreign_pct":0.548,"ttr":0.5463,"avg_len":4.72,"vowel_pct":39.37,"allit":27,"langs":{"la":1,"ga":0,"fr":3,"de":3,"it":2,"nl":1}},{"i":47,"neo_pct":16.07,"foreign_pct":1.461,"ttr":0.5354,"avg_len":4.66,"vowel_pct":40.5,"allit":19,"langs":{"la":6,"ga":0,"fr":3,"de":7,"it":1,"nl":3}},{"i":48,"neo_pct":12.19,"foreign_pct":0.958,"ttr":0.5673,"avg_len":4.92,"vowel_pct":40.04,"allit":24,"langs":{"la":11,"ga":2,"fr":1,"de":1,"it":3,"nl":0}},{"i":49,"neo_pct":15.79,"foreign_pct":0.73,"ttr":0.5408,"avg_len":4.67,"vowel_pct":38.39,"allit":29,"langs":{"la":2,"ga":2,"fr":0,"de":6,"it":0,"nl":1}},{"i":50,"neo_pct":15.02,"foreign_pct":0.548,"ttr":0.5294,"avg_len":4.55,"vowel_pct":38.32,"allit":26,"langs":{"la":2,"ga":1,"fr":1,"de":0,"it":0,"nl":0}},{"i":51,"neo_pct":18.53,"foreign_pct":1.141,"ttr":0.5354,"avg_len":4.72,"vowel_pct":39.47,"allit":19,"langs":{"la":3,"ga":5,"fr":3,"de":2,"it":0,"nl":2}},{"i":52,"neo_pct":17.12,"foreign_pct":0.639,"ttr":0.5513,"avg_len":4.7,"vowel_pct":38.56,"allit":31,"langs":{"la":2,"ga":4,"fr":0,"de":1,"it":0,"nl":1}},{"i":53,"neo_pct":20.08,"foreign_pct":1.187,"ttr":0.5605,"avg_len":4.79,"vowel_pct":38.79,"allit":22,"langs":{"la":4,"ga":2,"fr":3,"de":6,"it":1,"nl":2}},{"i":54,"neo_pct":22.55,"foreign_pct":0.502,"ttr":0.5637,"avg_len":4.99,"vowel_pct":38.57,"allit":19,"langs":{"la":0,"ga":4,"fr":1,"de":1,"it":0,"nl":1}},{"i":55,"neo_pct":22.82,"foreign_pct":0.502,"ttr":0.55,"avg_len":4.94,"vowel_pct":38.79,"allit":23,"langs":{"la":1,"ga":1,"fr":1,"de":1,"it":1,"nl":3}},{"i":56,"neo_pct":18.53,"foreign_pct":0.502,"ttr":0.5395,"avg_len":4.95,"vowel_pct":38.92,"allit":18,"langs":{"la":0,"ga":4,"fr":0,"de":2,"it":0,"nl":1}},{"i":57,"neo_pct":16.29,"foreign_pct":0.593,"ttr":0.5477,"avg_len":4.83,"vowel_pct":39.71,"allit":17,"langs":{"la":1,"ga":1,"fr":2,"de":1,"it":2,"nl":3}},{"i":58,"neo_pct":17.75,"foreign_pct":0.274,"ttr":0.5317,"avg_len":4.77,"vowel_pct":39.27,"allit":24,"langs":{"la":2,"ga":1,"fr":0,"de":1,"it":0,"nl":1}},{"i":59,"neo_pct":16.02,"foreign_pct":0.502,"ttr":0.5358,"avg_len":4.7,"vowel_pct":39.6,"allit":22,"langs":{"la":1,"ga":3,"fr":0,"de":2,"it":1,"nl":2}},{"i":60,"neo_pct":13.6,"foreign_pct":0.593,"ttr":0.5016,"avg_len":4.65,"vowel_pct":38.74,"allit":13,"langs":{"la":0,"ga":4,"fr":0,"de":5,"it":0,"nl":0}},{"i":61,"neo_pct":12.23,"foreign_pct":0.411,"ttr":0.4491,"avg_len":4.81,"vowel_pct":39.05,"allit":19,"langs":{"la":2,"ga":1,"fr":0,"de":1,"it":1,"nl":2}},{"i":62,"neo_pct":11.14,"foreign_pct":0.73,"ttr":0.4487,"avg_len":4.61,"vowel_pct":38.85,"allit":16,"langs":{"la":2,"ga":5,"fr":1,"de":0,"it":1,"nl":7}},{"i":63,"neo_pct":10.95,"foreign_pct":0.365,"ttr":0.5217,"avg_len":4.6,"vowel_pct":39.21,"allit":21,"langs":{"la":0,"ga":1,"fr":0,"de":1,"it":1,"nl":2}},{"i":64,"neo_pct":11.32,"foreign_pct":0.456,"ttr":0.5121,"avg_len":4.52,"vowel_pct":39.62,"allit":16,"langs":{"la":0,"ga":1,"fr":2,"de":1,"it":0,"nl":4}},{"i":65,"neo_pct":15.79,"foreign_pct":0.639,"ttr":0.5121,"avg_len":4.66,"vowel_pct":39.38,"allit":19,"langs":{"la":0,"ga":1,"fr":1,"de":3,"it":0,"nl":4}},{"i":66,"neo_pct":14.1,"foreign_pct":0.958,"ttr":0.5294,"avg_len":4.69,"vowel_pct":39.41,"allit":21,"langs":{"la":3,"ga":1,"fr":1,"de":5,"it":2,"nl":3}},{"i":67,"neo_pct":12.32,"foreign_pct":0.365,"ttr":0.5007,"avg_len":4.6,"vowel_pct":40.13,"allit":15,"langs":{"la":2,"ga":0,"fr":0,"de":1,"it":2,"nl":1}},{"i":68,"neo_pct":9.45,"foreign_pct":0.365,"ttr":0.5103,"avg_len":4.63,"vowel_pct":40.11,"allit":11,"langs":{"la":0,"ga":0,"fr":4,"de":0,"it":2,"nl":0}},{"i":69,"neo_pct":9.22,"foreign_pct":0.456,"ttr":0.5116,"avg_len":4.68,"vowel_pct":40.39,"allit":18,"langs":{"la":2,"ga":1,"fr":1,"de":0,"it":2,"nl":2}},{"i":70,"neo_pct":9.4,"foreign_pct":0.411,"ttr":0.5007,"avg_len":4.52,"vowel_pct":40.3,"allit":8,"langs":{"la":3,"ga":1,"fr":1,"de":2,"it":0,"nl":0}},{"i":71,"neo_pct":11.87,"foreign_pct":0.183,"ttr":0.5281,"avg_len":4.61,"vowel_pct":39.82,"allit":11,"langs":{"la":0,"ga":1,"fr":1,"de":0,"it":0,"nl":0}},{"i":72,"neo_pct":9.9,"foreign_pct":0.365,"ttr":0.5021,"avg_len":4.55,"vowel_pct":40.18,"allit":16,"langs":{"la":1,"ga":1,"fr":3,"de":0,"it":2,"nl":0}},{"i":73,"neo_pct":8.99,"foreign_pct":0.319,"ttr":0.4623,"avg_len":4.36,"vowel_pct":39.82,"allit":17,"langs":{"la":0,"ga":0,"fr":0,"de":2,"it":2,"nl":0}},{"i":74,"neo_pct":10.77,"foreign_pct":0.411,"ttr":0.5002,"avg_len":4.46,"vowel_pct":40.37,"allit":17,"langs":{"la":2,"ga":0,"fr":1,"de":1,"it":1,"nl":1}},{"i":75,"neo_pct":11.96,"foreign_pct":0.456,"ttr":0.534,"avg_len":4.7,"vowel_pct":40.1,"allit":19,"langs":{"la":0,"ga":1,"fr":2,"de":1,"it":0,"nl":1}},{"i":76,"neo_pct":11.14,"foreign_pct":0.639,"ttr":0.5039,"avg_len":4.64,"vowel_pct":39.59,"allit":17,"langs":{"la":1,"ga":2,"fr":2,"de":5,"it":0,"nl":1}},{"i":77,"neo_pct":14.38,"foreign_pct":1.141,"ttr":0.5367,"avg_len":4.67,"vowel_pct":40.99,"allit":25,"langs":{"la":8,"ga":4,"fr":3,"de":2,"it":1,"nl":2}},{"i":78,"neo_pct":12.87,"foreign_pct":0.548,"ttr":0.5002,"avg_len":4.58,"vowel_pct":40.35,"allit":18,"langs":{"la":1,"ga":2,"fr":1,"de":1,"it":0,"nl":1}},{"i":79,"neo_pct":15.97,"foreign_pct":0.822,"ttr":0.5586,"avg_len":4.72,"vowel_pct":39.57,"allit":22,"langs":{"la":6,"ga":3,"fr":5,"de":1,"it":1,"nl":0}},{"i":80,"neo_pct":13.6,"foreign_pct":0.913,"ttr":0.5162,"avg_len":4.76,"vowel_pct":38.96,"allit":20,"langs":{"la":2,"ga":2,"fr":10,"de":1,"it":2,"nl":0}},{"i":81,"neo_pct":12.28,"foreign_pct":0.593,"ttr":0.5185,"avg_len":4.65,"vowel_pct":40.07,"allit":18,"langs":{"la":3,"ga":1,"fr":2,"de":3,"it":1,"nl":2}},{"i":82,"neo_pct":10.45,"foreign_pct":0.913,"ttr":0.4929,"avg_len":4.48,"vowel_pct":39.31,"allit":11,"langs":{"la":6,"ga":6,"fr":0,"de":5,"it":0,"nl":2}},{"i":83,"neo_pct":10.45,"foreign_pct":0.365,"ttr":0.513,"avg_len":4.72,"vowel_pct":40.33,"allit":12,"langs":{"la":1,"ga":2,"fr":3,"de":1,"it":1,"nl":0}},{"i":84,"neo_pct":12.92,"foreign_pct":0.685,"ttr":0.5367,"avg_len":4.75,"vowel_pct":39.04,"allit":13,"langs":{"la":2,"ga":2,"fr":1,"de":2,"it":1,"nl":0}},{"i":85,"neo_pct":18.44,"foreign_pct":0.593,"ttr":0.5482,"avg_len":4.8,"vowel_pct":39.89,"allit":16,"langs":{"la":0,"ga":3,"fr":2,"de":3,"it":0,"nl":3}},{"i":86,"neo_pct":13.46,"foreign_pct":0.685,"ttr":0.5733,"avg_len":5.13,"vowel_pct":39.29,"allit":24,"langs":{"la":2,"ga":2,"fr":3,"de":4,"it":1,"nl":0}},{"i":87,"neo_pct":16.89,"foreign_pct":0.958,"ttr":0.565,"avg_len":4.89,"vowel_pct":38.82,"allit":21,"langs":{"la":8,"ga":2,"fr":2,"de":5,"it":1,"nl":1}},{"i":88,"neo_pct":15.97,"foreign_pct":0.639,"ttr":0.5536,"avg_len":4.98,"vowel_pct":39.02,"allit":21,"langs":{"la":2,"ga":3,"fr":0,"de":4,"it":0,"nl":2}},{"i":89,"neo_pct":11.14,"foreign_pct":0.685,"ttr":0.5135,"avg_len":4.67,"vowel_pct":39.81,"allit":14,"langs":{"la":8,"ga":2,"fr":0,"de":2,"it":1,"nl":0}},{"i":90,"neo_pct":15.84,"foreign_pct":0.867,"ttr":0.5253,"avg_len":4.74,"vowel_pct":39.54,"allit":29,"langs":{"la":1,"ga":2,"fr":5,"de":3,"it":1,"nl":1}},{"i":91,"neo_pct":11.14,"foreign_pct":0.73,"ttr":0.5208,"avg_len":5.08,"vowel_pct":39.84,"allit":13,"langs":{"la":6,"ga":1,"fr":0,"de":0,"it":6,"nl":0}},{"i":92,"neo_pct":12.92,"foreign_pct":0.411,"ttr":0.5504,"avg_len":4.8,"vowel_pct":38.32,"allit":28,"langs":{"la":1,"ga":3,"fr":1,"de":1,"it":0,"nl":3}},{"i":93,"neo_pct":11.64,"foreign_pct":0.593,"ttr":0.5262,"avg_len":4.64,"vowel_pct":39.17,"allit":21,"langs":{"la":0,"ga":2,"fr":1,"de":2,"it":0,"nl":5}},{"i":94,"neo_pct":18.58,"foreign_pct":0.593,"ttr":0.5764,"avg_len":4.86,"vowel_pct":38.97,"allit":30,"langs":{"la":3,"ga":2,"fr":2,"de":2,"it":2,"nl":0}},{"i":95,"neo_pct":17.89,"foreign_pct":0.639,"ttr":0.5468,"avg_len":4.83,"vowel_pct":39.4,"allit":27,"langs":{"la":3,"ga":4,"fr":0,"de":0,"it":1,"nl":0}},{"i":96,"neo_pct":17.25,"foreign_pct":0.958,"ttr":0.5555,"avg_len":5.07,"vowel_pct":39.58,"allit":28,"langs":{"la":6,"ga":2,"fr":2,"de":3,"it":0,"nl":2}},{"i":97,"neo_pct":17.75,"foreign_pct":0.685,"ttr":0.5436,"avg_len":5.18,"vowel_pct":39.45,"allit":21,"langs":{"la":4,"ga":3,"fr":0,"de":3,"it":0,"nl":2}},{"i":98,"neo_pct":10.09,"foreign_pct":0.411,"ttr":0.4788,"avg_len":4.32,"vowel_pct":40.44,"allit":5,"langs":{"la":0,"ga":1,"fr":1,"de":2,"it":1,"nl":1}},{"i":99,"neo_pct":9.86,"foreign_pct":0.394,"ttr":0.4496,"avg_len":4.23,"vowel_pct":40.42,"allit":22,"langs":{"la":1,"ga":1,"fr":2,"de":0,"it":0,"nl":0}}],"books":[{"label":"Book I","frac":0.0},{"label":"Book II","frac":0.3534},{"label":"Book III","frac":0.6366},{"label":"Book IV","frac":0.9418}],"track_langs":["la","ga","fr","de","it","nl"],"window_tokens":2191,"lang_names":{"la":"Latin","ga":"Irish","fr":"French","de":"German","it":"Italian","nl":"Dutch"}};
+const W = T.windows;
+const $ = s => document.querySelector(s);
+
+const METRICS = [
+  ["neo_pct",     "coinages (% of window words)"],
+  ["foreign_pct", "exclusively foreign words (% of window words)"],
+  ["ttr",         "lexical diversity (window TTR)"],
+  ["avg_len",     "mean word length (letters)"],
+  ["vowel_pct",   "vowel share (%)"],
+  ["allit",       "alliteration runs in the window (count)"]
+];
+const LANG_COLORS = {la:"#333",ga:"#555",fr:"#777",
+                     de:"#999",it:"#aaa",nl:"#c4c4c4"};
+
+function chart(vals, label, extra){
+  const w=700,h=110,p=8;
+  const mn=Math.min(...vals), mx=Math.max(...vals);
+  const sx=i=>p+i*(w-2*p)/(W.length-1);
+  const sy=v=>h-p-(v-mn)/((mx-mn)||1)*(h-2*p);
+  const line=vs=>vs.map((v,i)=>`${sx(i).toFixed(1)},${sy(v).toFixed(1)}`).join(" ");
+  let s=`<p style="margin-bottom:2px">${label} (min ${mn}, max ${mx})</p>`+
+    `<svg viewBox="0 0 ${w} ${h}">`;
+  T.books.forEach(b=>{const x=sx(Math.round(b.frac*(W.length-1)));
+    s+=`<line x1="${x}" y1="0" x2="${x}" y2="${h}" stroke="#999" stroke-dasharray="3,3"/>`;
+    s+=`<text x="${x+3}" y="12" font-size="10" fill="#666">${b.label}</text>`;});
+  s+=`<polyline points="${line(vals)}" fill="none" stroke="#000" stroke-width="1.3"/>`;
+  if(extra) for(const [code,vs] of extra)
+    s+=`<polyline points="${line(vs)}" fill="none" stroke="${LANG_COLORS[code]}" stroke-width="1"/>`;
+  s+=`<line class="cur" x1="${sx(0)}" y1="0" x2="${sx(0)}" y2="${h}" stroke="#888" stroke-width="1.5"/>`;
+  return s+`</svg>`;
+}
+
+let html="";
+for(const [key,label] of METRICS)
+  html+=chart(W.map(w=>w[key]),label);
+html+=chart(W.map(w=>Object.values(w.langs).reduce((a,b)=>a+b,0)),
+  "foreign words per window, total (black) and by language: " +
+  T.track_langs.map(c=>T.lang_names[c]+" ("+c+")").join(", "),
+  T.track_langs.map(c=>[c,W.map(w=>w.langs[c])]));
+$("#charts").innerHTML=html;
+
+const curs=[...document.querySelectorAll(".cur")];
+function upd(){
+  const i=+$("#pos").value, w=W[i];
+  const p=8, wpx=700;
+  const x=p+i*(wpx-2*p)/(W.length-1);
+  curs.forEach(c=>{c.setAttribute("x1",x);c.setAttribute("x2",x);});
+  let book="Book I";
+  for(const b of T.books) if(i/(W.length-1)>=b.frac) book=b.label;
+  const langs=T.track_langs.map(c=>`${T.lang_names[c]}: ${w.langs[c]}`).join(", ");
+  $("#readout").textContent=
+`Position: ${i}% of the book (${book}, window ~${T.window_tokens} words)
+coinages: ${w.neo_pct}%   foreign: ${w.foreign_pct}%   TTR: ${w.ttr}
+mean word length: ${w.avg_len}   vowels: ${w.vowel_pct}%   alliteration: ${w.allit}
+foreign words by language — ${langs}`;
+}
+$("#pos").oninput=upd;
+upd();
+</script>
+</body>
+</html>
