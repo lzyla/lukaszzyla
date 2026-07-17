@@ -45,6 +45,8 @@ const {
     --faint: #a9a298;      /* etykiety podgrup */
     --label: #423d37;      /* tytuły sekcji (ciemniejsze) */
     --rule: rgba(27, 24, 21, 0.14);
+    --quiet-line: rgba(27, 24, 21, 0.075);
+    --quiet-line-soft: rgba(27, 24, 21, 0.045);
     --line: #d86a2c; /* pomarańczowa linia podkreślenia na hover */
 
     --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
@@ -100,10 +102,36 @@ const {
 
   /* --- Kontener karty --- */
   .card {
+    position: relative;
+    isolation: isolate;
     max-width: 840px;
     margin: 0 auto;
     padding: 72px 56px 64px;
     color: var(--ink);
+  }
+  .card::before,
+  .card::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .card::before {
+    top: 44px;
+    right: -42px;
+    width: min(238px, 32vw);
+    height: 344px;
+    border-top: 1px solid var(--quiet-line);
+    border-right: 1px solid var(--quiet-line);
+    transform: skewY(-8deg);
+  }
+  .card::after {
+    top: 184px;
+    left: -52px;
+    width: min(228px, 30vw);
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--quiet-line-soft) 20%, var(--quiet-line) 52%, transparent 100%);
+    transform: rotate(-13deg);
   }
 
   /* --- Masthead --- */
@@ -332,6 +360,19 @@ const {
   /* --- Responsywność --- */
   @media (max-width: 768px) {
     .card { padding: 40px 24px 56px; }
+    .card::before {
+      top: 30px;
+      right: 18px;
+      width: 104px;
+      height: 168px;
+      opacity: 0.72;
+    }
+    .card::after {
+      top: 152px;
+      left: 14px;
+      width: 96px;
+      opacity: 0.7;
+    }
     .masthead { margin-bottom: 40px; }
     .figure img { height: 240px; }
   }
