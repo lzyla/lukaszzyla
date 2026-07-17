@@ -76,13 +76,21 @@ import Site from '../layouts/Site.astro';
   @media (prefers-reduced-motion: reduce) {
     .portrait-wrap:hover::after { animation: none; }
   }
-  .intro-block .lede { flex: 1 1 auto; min-width: 0; }
+  .intro-block .lede {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 22px;
+    border-left: 1px solid rgba(27, 24, 21, 0.2);
+  }
 
   @media (max-width: 768px) {
     .intro-block {
       flex-direction: column-reverse;
       align-items: flex-start;
       gap: 26px;
+    }
+    .intro-block .lede {
+      padding-left: 16px;
     }
     .portrait { width: 200px; height: 270px; }
   }

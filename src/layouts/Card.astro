@@ -136,12 +136,23 @@ const {
 
   /* --- Masthead --- */
   .masthead {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 28px;
     flex-wrap: wrap;
-    margin-bottom: 58px;
+    margin-bottom: 44px;
+    padding-bottom: 24px;
+  }
+  .masthead::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--quiet-line) 0%, var(--quiet-line-soft) 72%, transparent 100%);
   }
   .masthead .name {
     position: relative;
@@ -371,7 +382,10 @@ const {
       left: 14px;
       width: 96px;
     }
-    .masthead { margin-bottom: 40px; }
+    .masthead {
+      margin-bottom: 34px;
+      padding-bottom: 20px;
+    }
     .figure img { height: 240px; }
   }
 </style>
