@@ -47,6 +47,8 @@ const {
     --rule: rgba(27, 24, 21, 0.14);
     --quiet-line: rgba(27, 24, 21, 0.18);
     --quiet-line-soft: rgba(27, 24, 21, 0.08);
+    --paper-wash: rgba(27, 24, 21, 0.035);
+    --paper-wash-soft: rgba(27, 24, 21, 0.018);
     --line: #d86a2c; /* pomarańczowa linia podkreślenia na hover */
 
     --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
@@ -69,7 +71,10 @@ const {
   }
 
   html {
-    background: var(--page-bg);
+    background:
+      linear-gradient(155deg, var(--paper-wash) 0%, rgba(255, 255, 255, 0) 34%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0) 58%, var(--paper-wash-soft) 100%),
+      linear-gradient(180deg, #ffffff 0%, #fbfbfa 58%, #ffffff 100%);
     color: var(--body);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
