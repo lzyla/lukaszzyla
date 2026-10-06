@@ -1,5 +1,5 @@
 ---
-title: Próba analfabety
+title: Suficiente
 date: 2026-10-06
 ---
-Próba analfabety
+Nein 
